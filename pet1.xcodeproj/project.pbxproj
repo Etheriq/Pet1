@@ -12,6 +12,7 @@
 		296F90E41F6AAD210088C956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E21F6AAD210088C956 /* Main.storyboard */; };
 		296F90E61F6AAD210088C956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E51F6AAD210088C956 /* Assets.xcassets */; };
 		296F90E91F6AAD210088C956 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E71F6AAD210088C956 /* LaunchScreen.storyboard */; };
+		DB91CBEEE39D9946F4DB3436 /* Pods_pet1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DFDBD69C585C511F6A872C /* Pods_pet1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		296F90E51F6AAD210088C956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		296F90E81F6AAD210088C956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		296F90EA1F6AAD210088C956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF0EA734450A1AE1DB885C1 /* Pods-pet1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pet1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pet1/Pods-pet1.debug.xcconfig"; sourceTree = "<group>"; };
+		E590F9FA9564445AF4E3BE02 /* Pods-pet1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pet1.release.xcconfig"; path = "Pods/Target Support Files/Pods-pet1/Pods-pet1.release.xcconfig"; sourceTree = "<group>"; };
+		F8DFDBD69C585C511F6A872C /* Pods_pet1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pet1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB91CBEEE39D9946F4DB3436 /* Pods_pet1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				296F90DD1F6AAD210088C956 /* pet1 */,
 				296F90DC1F6AAD210088C956 /* Products */,
+				4779BB2D889D35BD7E0D7046 /* Pods */,
+				C8F37DCD2DABB8BEB995084A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = pet1;
 			sourceTree = "<group>";
 		};
+		4779BB2D889D35BD7E0D7046 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0EA734450A1AE1DB885C1 /* Pods-pet1.debug.xcconfig */,
+				E590F9FA9564445AF4E3BE02 /* Pods-pet1.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C8F37DCD2DABB8BEB995084A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8DFDBD69C585C511F6A872C /* Pods_pet1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 296F90ED1F6AAD210088C956 /* Build configuration list for PBXNativeTarget "pet1" */;
 			buildPhases = (
+				1C62BB25BD8DAA4C480DA258 /* [CP] Check Pods Manifest.lock */,
 				296F90D71F6AAD210088C956 /* Sources */,
 				296F90D81F6AAD210088C956 /* Frameworks */,
 				296F90D91F6AAD210088C956 /* Resources */,
+				83DC340713667D3882C20AE6 /* [CP] Embed Pods Frameworks */,
+				5535B6F5CD3AD7BAF94E02AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,74 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C62BB25BD8DAA4C480DA258 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pet1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5535B6F5CD3AD7BAF94E02AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pet1/Pods-pet1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83DC340713667D3882C20AE6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-pet1/Pods-pet1-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FXKeychain/FXKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pet1/Pods-pet1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		296F90D71F6AAD210088C956 /* Sources */ = {
@@ -258,6 +353,7 @@
 		};
 		296F90EE1F6AAD210088C956 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EF0EA734450A1AE1DB885C1 /* Pods-pet1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -273,6 +369,7 @@
 		};
 		296F90EF1F6AAD210088C956 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E590F9FA9564445AF4E3BE02 /* Pods-pet1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
