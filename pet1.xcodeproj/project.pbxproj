@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		291C2F081F6ABD4A0047C819 /* YTDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C2F071F6ABD4A0047C819 /* YTDatabase.swift */; };
+		291C2F0B1F6AC90D0047C819 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C2F0A1F6AC90D0047C819 /* Constants.swift */; };
+		291C2F0D1F6ACAD70047C819 /* YTKeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C2F0C1F6ACAD70047C819 /* YTKeychainHelper.swift */; };
 		296F90DF1F6AAD210088C956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F90DE1F6AAD210088C956 /* AppDelegate.swift */; };
 		296F90E11F6AAD210088C956 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F90E01F6AAD210088C956 /* ViewController.swift */; };
 		296F90E41F6AAD210088C956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E21F6AAD210088C956 /* Main.storyboard */; };
@@ -18,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		291C2F071F6ABD4A0047C819 /* YTDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTDatabase.swift; sourceTree = "<group>"; };
+		291C2F091F6AC89C0047C819 /* pet1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pet1.entitlements; sourceTree = "<group>"; };
+		291C2F0A1F6AC90D0047C819 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		291C2F0C1F6ACAD70047C819 /* YTKeychainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTKeychainHelper.swift; sourceTree = "<group>"; };
 		296F90DB1F6AAD210088C956 /* pet1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pet1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F90DE1F6AAD210088C956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		296F90E01F6AAD210088C956 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		296F90DD1F6AAD210088C956 /* pet1 */ = {
 			isa = PBXGroup;
 			children = (
+				291C2F091F6AC89C0047C819 /* pet1.entitlements */,
 				2985AE151F6AAF410012A537 /* ViewControllers */,
 				2985AE161F6AAF500012A537 /* Storyboards */,
 				2985AE131F6AAF240012A537 /* Networking */,
@@ -109,6 +115,7 @@
 		2985AE171F6AAF5A0012A537 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				291C2F0A1F6AC90D0047C819 /* Constants.swift */,
 				296F90E51F6AAD210088C956 /* Assets.xcassets */,
 				296F90EA1F6AAD210088C956 /* Info.plist */,
 			);
@@ -118,6 +125,7 @@
 		2985AE181F6AAF670012A537 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				291C2F0C1F6ACAD70047C819 /* YTKeychainHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -176,6 +184,11 @@
 					296F90DA1F6AAD210088C956 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -286,6 +299,8 @@
 				291C2F081F6ABD4A0047C819 /* YTDatabase.swift in Sources */,
 				296F90E11F6AAD210088C956 /* ViewController.swift in Sources */,
 				296F90DF1F6AAD210088C956 /* AppDelegate.swift in Sources */,
+				291C2F0D1F6ACAD70047C819 /* YTKeychainHelper.swift in Sources */,
+				291C2F0B1F6AC90D0047C819 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +424,7 @@
 			baseConfigurationReference = 5EF0EA734450A1AE1DB885C1 /* Pods-pet1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = pet1/pet1.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: eKreative LLP (DJNZKXGF8V)";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = pet1/Info.plist;
@@ -428,6 +444,7 @@
 			baseConfigurationReference = E590F9FA9564445AF4E3BE02 /* Pods-pet1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = pet1/pet1.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: eKreative LLP (DJNZKXGF8V)";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = pet1/Info.plist;
