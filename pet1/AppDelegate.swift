@@ -13,16 +13,19 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var appBaseCoordinator: AppBaseCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
         YTDatabase.shared.initializeRealm()
         
+        let navigationController = UINavigationController()
+        window?.rootViewController = navigationController
+        appBaseCoordinator = AppBaseCoordinator(with: navigationController, andWithAuthService: YTAuthService())
+        appBaseCoordinator?.start()
         
-
+        window?.makeKeyAndVisible()
         
         return true
     }

@@ -20,6 +20,14 @@
 		297BF8A31F6FCFEF00A1FFA2 /* YTGradientedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8A11F6FCFEF00A1FFA2 /* YTGradientedView.swift */; };
 		297BF8A81F6FF51400A1FFA2 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297BF8A71F6FF51400A1FFA2 /* SignIn.storyboard */; };
 		297BF8A91F6FF51400A1FFA2 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297BF8A71F6FF51400A1FFA2 /* SignIn.storyboard */; };
+		297BF8AB1F7007B900A1FFA2 /* AppBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8AA1F7007B900A1FFA2 /* AppBaseCoordinator.swift */; };
+		297BF8AC1F7007B900A1FFA2 /* AppBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8AA1F7007B900A1FFA2 /* AppBaseCoordinator.swift */; };
+		297BF8AE1F7009C300A1FFA2 /* YTAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8AD1F7009C300A1FFA2 /* YTAuthService.swift */; };
+		297BF8AF1F7009C300A1FFA2 /* YTAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8AD1F7009C300A1FFA2 /* YTAuthService.swift */; };
+		297BF8B11F700D0100A1FFA2 /* YTSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8B01F700D0100A1FFA2 /* YTSignInViewController.swift */; };
+		297BF8B21F700D0100A1FFA2 /* YTSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8B01F700D0100A1FFA2 /* YTSignInViewController.swift */; };
+		297BF8B51F70128E00A1FFA2 /* FirstStartViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8B41F70128E00A1FFA2 /* FirstStartViewControllerCoordinator.swift */; };
+		297BF8B61F70128E00A1FFA2 /* FirstStartViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8B41F70128E00A1FFA2 /* FirstStartViewControllerCoordinator.swift */; };
 		2987354E1F6AD0E1003FAF6C /* YTDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C2F071F6ABD4A0047C819 /* YTDatabase.swift */; };
 		298735501F6AD0E1003FAF6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F90DE1F6AAD210088C956 /* AppDelegate.swift */; };
 		298735511F6AD0E1003FAF6C /* YTKeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C2F0C1F6ACAD70047C819 /* YTKeychainHelper.swift */; };
@@ -47,6 +55,10 @@
 		297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFirstStartViewController.swift; sourceTree = "<group>"; };
 		297BF8A11F6FCFEF00A1FFA2 /* YTGradientedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTGradientedView.swift; sourceTree = "<group>"; };
 		297BF8A71F6FF51400A1FFA2 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		297BF8AA1F7007B900A1FFA2 /* AppBaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBaseCoordinator.swift; sourceTree = "<group>"; };
+		297BF8AD1F7009C300A1FFA2 /* YTAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTAuthService.swift; sourceTree = "<group>"; };
+		297BF8B01F700D0100A1FFA2 /* YTSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTSignInViewController.swift; sourceTree = "<group>"; };
+		297BF8B41F70128E00A1FFA2 /* FirstStartViewControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstStartViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		2987355E1F6AD0E1003FAF6C /* pet1_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pet1_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2987355F1F6AD0E1003FAF6C /* pet1_dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "pet1_dev-Info.plist"; path = "/Users/xeon/ios/pet1/pet1_dev-Info.plist"; sourceTree = "<absolute>"; };
 		29EE72851F6FC60F003B4929 /* YTRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTRoundedButton.swift; sourceTree = "<group>"; };
@@ -133,6 +145,15 @@
 			name = "Sign Up";
 			sourceTree = "<group>";
 		};
+		297BF8B31F70124E00A1FFA2 /* FirstStart View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */,
+				297BF8B41F70128E00A1FFA2 /* FirstStartViewControllerCoordinator.swift */,
+			);
+			name = "FirstStart View Controller";
+			sourceTree = "<group>";
+		};
 		2985AE131F6AAF240012A537 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,9 +172,10 @@
 		2985AE151F6AAF410012A537 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				297BF8B31F70124E00A1FFA2 /* FirstStart View Controller */,
 				29EE72821F6FC2F2003B4929 /* Sign Up */,
 				29EE72811F6FC2E1003B4929 /* Sign In */,
-				297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */,
+				297BF8AA1F7007B900A1FFA2 /* AppBaseCoordinator.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				291C2F0C1F6ACAD70047C819 /* YTKeychainHelper.swift */,
+				297BF8AD1F7009C300A1FFA2 /* YTAuthService.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -191,6 +214,7 @@
 		29EE72811F6FC2E1003B4929 /* Sign In */ = {
 			isa = PBXGroup;
 			children = (
+				297BF8B01F700D0100A1FFA2 /* YTSignInViewController.swift */,
 			);
 			name = "Sign In";
 			sourceTree = "<group>";
@@ -485,9 +509,13 @@
 			files = (
 				291C2F081F6ABD4A0047C819 /* YTDatabase.swift in Sources */,
 				296F90DF1F6AAD210088C956 /* AppDelegate.swift in Sources */,
+				297BF8AE1F7009C300A1FFA2 /* YTAuthService.swift in Sources */,
 				291C2F0D1F6ACAD70047C819 /* YTKeychainHelper.swift in Sources */,
+				297BF8AB1F7007B900A1FFA2 /* AppBaseCoordinator.swift in Sources */,
+				297BF8B11F700D0100A1FFA2 /* YTSignInViewController.swift in Sources */,
 				291C2F0B1F6AC90D0047C819 /* Constants.swift in Sources */,
 				297BF8A21F6FCFEF00A1FFA2 /* YTGradientedView.swift in Sources */,
+				297BF8B51F70128E00A1FFA2 /* FirstStartViewControllerCoordinator.swift in Sources */,
 				297BF89E1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift in Sources */,
 				29EE72861F6FC60F003B4929 /* YTRoundedButton.swift in Sources */,
 			);
@@ -499,9 +527,13 @@
 			files = (
 				2987354E1F6AD0E1003FAF6C /* YTDatabase.swift in Sources */,
 				298735501F6AD0E1003FAF6C /* AppDelegate.swift in Sources */,
+				297BF8AF1F7009C300A1FFA2 /* YTAuthService.swift in Sources */,
 				298735511F6AD0E1003FAF6C /* YTKeychainHelper.swift in Sources */,
+				297BF8AC1F7007B900A1FFA2 /* AppBaseCoordinator.swift in Sources */,
+				297BF8B21F700D0100A1FFA2 /* YTSignInViewController.swift in Sources */,
 				298735521F6AD0E1003FAF6C /* Constants.swift in Sources */,
 				297BF8A31F6FCFEF00A1FFA2 /* YTGradientedView.swift in Sources */,
+				297BF8B61F70128E00A1FFA2 /* FirstStartViewControllerCoordinator.swift in Sources */,
 				297BF89F1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift in Sources */,
 				29EE72871F6FC60F003B4929 /* YTRoundedButton.swift in Sources */,
 			);

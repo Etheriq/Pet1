@@ -14,7 +14,7 @@ class Constants {
     static let keyDeviceID =  Bundle.main.bundleIdentifier! + "_device_id"
     static let keyPushToken =  Bundle.main.bundleIdentifier! + "_push_token"
     
-    
+    static let userIdentifiedKey = "userIdentifiedKey"
     
 }
 
