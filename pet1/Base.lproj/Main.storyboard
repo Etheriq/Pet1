@@ -1,26 +1,183 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xom-de-21B">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--First Start View Controller-->
+        <scene sceneID="e8M-ID-6se">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTFirstStartViewController" id="xom-de-21B" customClass="YTFirstStartViewController" customModule="pet1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Gi6-gp-Qf2"/>
+                        <viewControllerLayoutGuide type="bottom" id="E7M-Qw-Fk0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="o0Q-7C-rGR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ru-t8-KKZ" userLabel="gradientedBackgroundView" customClass="YTGradientedView" customModule="pet1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                        <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                        <color key="value" red="0.55686277149999996" green="0.35294118520000001" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalGradient" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9WB-Vm-G8z" userLabel="LogoImage">
+                                <rect key="frame" x="40" y="52" width="240" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="5rx-5x-ULe"/>
+                                    <constraint firstAttribute="width" constant="240" id="rNq-2z-fzS"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-9q-XDj" userLabel="SignInButton" customClass="YTRoundedButton" customModule="pet1" customModuleProvider="target">
+                                <rect key="frame" x="60" y="367" width="200" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="GAe-xv-FxW"/>
+                                    <constraint firstAttribute="height" constant="40" id="UvX-VD-Arw"/>
+                                </constraints>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInAction:" destination="xom-de-21B" eventType="touchUpInside" id="nor-WU-XWS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oz-Fu-lFD" userLabel="SignUpButton" customClass="YTRoundedButton" customModule="pet1" customModuleProvider="target">
+                                <rect key="frame" x="60" y="423" width="200" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8UW-Q0-GuP"/>
+                                    <constraint firstAttribute="width" constant="200" id="s19-Mx-53h"/>
+                                </constraints>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpAction:" destination="xom-de-21B" eventType="touchUpInside" id="Fuu-9K-Mcf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6T-Na-hqt" userLabel="FBButton" customClass="YTRoundedButton" customModule="pet1" customModuleProvider="target">
+                                <rect key="frame" x="60" y="479" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.61568627450000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="So9-Ix-Jh6"/>
+                                    <constraint firstAttribute="height" constant="40" id="qnf-rA-rOZ"/>
+                                </constraints>
+                                <state key="normal" title="Sign In with FB">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInWithFacebookAction:" destination="xom-de-21B" eventType="touchUpInside" id="6Dt-Wu-xFc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read the Terms and Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyt-42-ec4" userLabel="terms and conditions">
+                                <rect key="frame" x="40.5" y="531" width="239.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0ru-t8-KKZ" secondAttribute="trailing" id="1Ej-Ei-Vx4"/>
+                            <constraint firstItem="9WB-Vm-G8z" firstAttribute="top" secondItem="Gi6-gp-Qf2" secondAttribute="bottom" constant="32" id="1RU-GA-T2J"/>
+                            <constraint firstItem="E7M-Qw-Fk0" firstAttribute="top" secondItem="0ru-t8-KKZ" secondAttribute="bottom" id="6Wi-Un-M8v"/>
+                            <constraint firstItem="Z6T-Na-hqt" firstAttribute="top" secondItem="9Oz-Fu-lFD" secondAttribute="bottom" constant="16" id="8bz-4K-Kfn"/>
+                            <constraint firstItem="9Oz-Fu-lFD" firstAttribute="centerX" secondItem="o0Q-7C-rGR" secondAttribute="centerX" id="N1E-8V-mwG"/>
+                            <constraint firstItem="0ru-t8-KKZ" firstAttribute="leading" secondItem="o0Q-7C-rGR" secondAttribute="leading" id="O3C-wS-ubF"/>
+                            <constraint firstItem="Z6T-Na-hqt" firstAttribute="centerX" secondItem="o0Q-7C-rGR" secondAttribute="centerX" id="Ov3-pp-eP1"/>
+                            <constraint firstItem="E7M-Qw-Fk0" firstAttribute="top" secondItem="Gyt-42-ec4" secondAttribute="bottom" constant="16" id="SEh-WJ-rO1"/>
+                            <constraint firstItem="yhL-9q-XDj" firstAttribute="centerX" secondItem="o0Q-7C-rGR" secondAttribute="centerX" id="h1e-KH-rYp"/>
+                            <constraint firstItem="9WB-Vm-G8z" firstAttribute="centerX" secondItem="o0Q-7C-rGR" secondAttribute="centerX" id="hNl-SN-ZGT"/>
+                            <constraint firstItem="9Oz-Fu-lFD" firstAttribute="top" secondItem="yhL-9q-XDj" secondAttribute="bottom" constant="16" id="hxT-zC-eOL"/>
+                            <constraint firstItem="0ru-t8-KKZ" firstAttribute="top" secondItem="Gi6-gp-Qf2" secondAttribute="bottom" id="pnl-eA-o5X"/>
+                            <constraint firstItem="Gyt-42-ec4" firstAttribute="centerX" secondItem="o0Q-7C-rGR" secondAttribute="centerX" id="qyL-fT-Rqo"/>
+                            <constraint firstItem="yhL-9q-XDj" firstAttribute="top" secondItem="9WB-Vm-G8z" secondAttribute="bottom" constant="45" id="zJw-C2-EnU"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="gradientedBackgroundView" destination="0ru-t8-KKZ" id="8XH-UF-t8w"/>
+                        <outlet property="logoImage" destination="9WB-Vm-G8z" id="CX9-C3-OhS"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="woc-OB-pR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-184" y="16"/>
         </scene>
     </scenes>
 </document>
