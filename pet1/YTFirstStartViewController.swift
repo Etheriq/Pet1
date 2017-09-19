@@ -8,10 +8,19 @@
 
 import UIKit
 
+protocol YTFirstStartViewControllerCoordinatorDelegate: class {
+    func signInTapped()
+    func signUpTapped()
+    func signInWithFBTapped()
+    func showTermsAndConditionsTapped()
+}
+
 class YTFirstStartViewController: UIViewController {
 
     @IBOutlet weak var gradientedBackgroundView: YTGradientedView!
     @IBOutlet weak var logoImage: UIImageView!
+    
+    weak var coordinatorDelegate: YTFirstStartViewControllerCoordinatorDelegate?
     
     var colorArray: [(color1: UIColor, color2: UIColor)] = []
     var currentColorIndex = -1
@@ -21,6 +30,12 @@ class YTFirstStartViewController: UIViewController {
 
         configureGradientColors()
         animateGradientColors()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: - UI
@@ -49,12 +64,15 @@ class YTFirstStartViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func signInAction(_ sender: UIButton) {
+        coordinatorDelegate?.signInTapped()
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
+        coordinatorDelegate?.signUpTapped()
     }
     
     @IBAction func signInWithFacebookAction(_ sender: UIButton) {
+        coordinatorDelegate?.signInWithFBTapped()
     }
 
 }

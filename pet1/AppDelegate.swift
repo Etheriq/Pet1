@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         YTDatabase.shared.initializeRealm()
         
         let navigationController = UINavigationController()
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
-        appBaseCoordinator = AppBaseCoordinator(with: navigationController, andWithAuthService: YTAuthService())
+        appBaseCoordinator = AppBaseCoordinator(with: navigationController, andWithAuthService: YTAuthService.shared)
         appBaseCoordinator?.start()
         
         window?.makeKeyAndVisible()

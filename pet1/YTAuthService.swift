@@ -12,11 +12,10 @@ protocol AuthServiceProtocol {
     func isAuthorized() -> Bool
 }
 
-class YTAuthService: NSObject, AuthServiceProtocol {
+class YTAuthService: AuthServiceProtocol {
     
-    override init() {
-         super.init()
-    }
+    static let shared = YTAuthService()
+    private init() {}
     
     // Mark: - AuthServiceProtocol
     func isAuthorized() -> Bool {

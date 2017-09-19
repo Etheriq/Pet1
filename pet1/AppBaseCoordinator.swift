@@ -36,15 +36,13 @@ class AppBaseCoordinator: Coordinator {
     }
     
     // Mark: - Coordinator actions
-    private func showStartScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let startVC = storyboard.instantiateViewController(withIdentifier: "YTFirstStartViewController") as! YTFirstStartViewController
-        
-        
-        navigationController.show(startVC, sender: self)
+    fileprivate func showStartScreen() {
+        let startCoordinator = YTAuthorizationFlowCoordinator(with: navigationController)
+        startCoordinator.start()
+        childCoordinators.append(startCoordinator)
     }
     
-    private func showHomeScreen() {
+    fileprivate func showHomeScreen() {
         
     }
     
@@ -52,11 +50,10 @@ class AppBaseCoordinator: Coordinator {
 
 extension Coordinator {
     
-    fileprivate func removeChildCoordinator(coordinator: Coordinator) {
+    func removeChildCoordinator(coordinator: Coordinator) {
         self.childCoordinators = self.childCoordinators.filter { $0 !== coordinator }
     }
-    
-    fileprivate func addChildCoordinator(coordinator: Coordinator) {
+    func addChildCoordinator(coordinator: Coordinator) {
         self.childCoordinators.append(coordinator)
     }
 }
