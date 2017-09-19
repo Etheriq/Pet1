@@ -8,14 +8,38 @@
 
 import UIKit
 
+protocol YTSignInViewControllerCoordinatorDelegate: class {
+    func loginTapped()
+}
+
 class YTSignInViewController: UIViewController {
 
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    weak var coordinatorDelegate: YTSignInViewControllerCoordinatorDelegate?
+    var presenter: YTSignInPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter = YTSignInPresenter(withViewController: self)
+        
     }
 
-
+    // MARK: - Actions
+    @IBAction func loginAction(_ sender: UIButton) {
+        if presenter.validateLogin() {
+            presenter?.makeLogin()
+                .then { user -> Void in
+                // save user
+                }
+                .then { [weak self] _ in
+                    self?.coordinatorDelegate?.loginTapped()
+                }
+                .catch { error in
+                    // handle error
+                }
+        }
+    }
 
 }

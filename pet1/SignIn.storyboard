@@ -72,6 +72,9 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginAction:" destination="v0O-eJ-6VR" eventType="touchUpInside" id="QEe-5g-5Q4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,6 +89,10 @@
                             <constraint firstItem="ApO-KK-CZD" firstAttribute="top" secondItem="OgD-Ig-4pv" secondAttribute="bottom" constant="32" id="lzQ-GK-xW0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="hql-UM-Phs" id="zIy-dR-gEZ"/>
+                        <outlet property="passwordTextField" destination="QOL-vH-jvF" id="Is3-Yr-43U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi6-1X-y4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

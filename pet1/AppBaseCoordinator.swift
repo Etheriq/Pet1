@@ -24,7 +24,7 @@ class AppBaseCoordinator: Coordinator {
     }
     
     deinit {
-        debugPrint("Base AppCoordinator deinit")
+        debugPrint("deinit \(self)")
     }
     
     func start() {
@@ -45,7 +45,6 @@ class AppBaseCoordinator: Coordinator {
     fileprivate func showHomeScreen() {
         
     }
-    
 }
 
 extension Coordinator {

@@ -16,6 +16,10 @@ class YTAuthorizationFlowCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
+    deinit {
+        debugPrint("deinit \(self)")
+    }
+    
     func start() {
         let storyboard = UIStoryboard(name: "FirstStart", bundle: nil)
         let startVC = storyboard.instantiateViewController(withIdentifier: "YTFirstStartViewController") as! YTFirstStartViewController
@@ -26,7 +30,11 @@ class YTAuthorizationFlowCoordinator: Coordinator {
     
     // MARK: - Coordinator ways
     fileprivate func showSignIn() {
+        let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
+        let signInVC = storyboard.instantiateViewController(withIdentifier: "YTSignInViewController") as! YTSignInViewController
+        signInVC.coordinatorDelegate = self
         
+        navigationController.show(signInVC, sender: self)
     }
     fileprivate func showSignUp() {
         let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
@@ -42,10 +50,11 @@ class YTAuthorizationFlowCoordinator: Coordinator {
         
     }
     
-    func showHome() {
+    func showHomeScreen() {
 //        removeChildCoordinator(coordinator: self)
         
         // create home coordinator and make start()
+// TODO: Think about this: maybe need clear navigation stack VC
     }
 }
 
@@ -66,6 +75,46 @@ extension YTAuthorizationFlowCoordinator: YTFirstStartViewControllerCoordinatorD
 
 extension YTAuthorizationFlowCoordinator: YTSignUpViewControllerDelegate {
     func registered() {
-        showHome()
+        showHomeScreen()
     }
 }
+
+extension YTAuthorizationFlowCoordinator: YTSignInViewControllerCoordinatorDelegate {
+    func loginTapped() {
+        showHomeScreen()
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
