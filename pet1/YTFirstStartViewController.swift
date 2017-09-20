@@ -24,18 +24,26 @@ class YTFirstStartViewController: UIViewController {
     
     var colorArray: [(color1: UIColor, color2: UIColor)] = []
     var currentColorIndex = -1
+    var isAnimationStoped: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureGradientColors()
-        animateGradientColors()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        isAnimationStoped = true
+        animateGradientColors()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        isAnimationStoped = false
     }
     
     // MARK: - UI
@@ -49,16 +57,25 @@ class YTFirstStartViewController: UIViewController {
     }
     
     func animateGradientColors() {
-        currentColorIndex = currentColorIndex == (colorArray.count - 1) ? 0 : currentColorIndex + 1
-        UIView.transition(with: gradientedBackgroundView,
-                          duration: 2,
-                          options: [.transitionCrossDissolve],
-                          animations: {
-                            self.gradientedBackgroundView.firstColor = self.colorArray[self.currentColorIndex].color1
-                            self.gradientedBackgroundView.secondColor = self.colorArray[self.currentColorIndex].color2
-        }) { (success) in
-            self.animateGradientColors()
-        }
+//        currentColorIndex = currentColorIndex == (colorArray.count - 1) ? 0 : currentColorIndex + 1
+//        let aninmation = CABasicAnimation(keyPath: "colors")
+//        aninmation.toValue = [UIColor.green.cgColor, UIColor.yellow.cgColor]
+//        aninmation.duration = 10
+//        gradientedBackgroundView.layer.add(aninmation, forKey: nil)
+//
+//        UIView.transition(with: gradientedBackgroundView,
+//                          duration: 2,
+//                          options: [.transitionCrossDissolve],
+//                          animations: { [weak self] in
+//                            guard let weakSelf = self else { return }
+//                            
+//                            weakSelf.gradientedBackgroundView.firstColor = weakSelf.colorArray[weakSelf.currentColorIndex].color1
+//                            weakSelf.gradientedBackgroundView.secondColor = weakSelf.colorArray[weakSelf.currentColorIndex].color2
+//        }) { [weak self] (success) in
+//            guard let weakSelf = self, weakSelf.isAnimationStoped else { return }
+//            
+//            weakSelf.animateGradientColors()
+//        }
     }
     
     // MARK: - Actions

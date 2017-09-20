@@ -42,6 +42,10 @@
 		29C648111F714CE000B89DC7 /* YTSignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C6480F1F714CE000B89DC7 /* YTSignInPresenter.swift */; };
 		29C648141F71515100B89DC7 /* YTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C648131F71515100B89DC7 /* YTUser.swift */; };
 		29C648151F71515100B89DC7 /* YTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C648131F71515100B89DC7 /* YTUser.swift */; };
+		29C95EDB1F7250D100EB2FF9 /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C95EDA1F7250D100EB2FF9 /* TermsAndConditions.storyboard */; };
+		29C95EDC1F7250D100EB2FF9 /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C95EDA1F7250D100EB2FF9 /* TermsAndConditions.storyboard */; };
+		29C95EDF1F72511300EB2FF9 /* YTTermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C95EDE1F72511300EB2FF9 /* YTTermsAndConditionsViewController.swift */; };
+		29C95EE01F72511300EB2FF9 /* YTTermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C95EDE1F72511300EB2FF9 /* YTTermsAndConditionsViewController.swift */; };
 		29CC0C9B1F70F58800E8AC52 /* YTSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CC0C9A1F70F58800E8AC52 /* YTSignUpViewController.swift */; };
 		29CC0C9C1F70F58800E8AC52 /* YTSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CC0C9A1F70F58800E8AC52 /* YTSignUpViewController.swift */; };
 		29CC0CA11F710E4100E8AC52 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CC0CA01F710E4100E8AC52 /* SignUp.storyboard */; };
@@ -76,6 +80,8 @@
 		29C6480B1F71424C00B89DC7 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		29C6480F1F714CE000B89DC7 /* YTSignInPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTSignInPresenter.swift; sourceTree = "<group>"; };
 		29C648131F71515100B89DC7 /* YTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTUser.swift; sourceTree = "<group>"; };
+		29C95EDA1F7250D100EB2FF9 /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
+		29C95EDE1F72511300EB2FF9 /* YTTermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		29CC0C9A1F70F58800E8AC52 /* YTSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTSignUpViewController.swift; sourceTree = "<group>"; };
 		29CC0CA01F710E4100E8AC52 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		29CC0CA41F71331600E8AC52 /* YTHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTHomeViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 		2985AE151F6AAF410012A537 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				29C95EDD1F7250F400EB2FF9 /* TermsAndConditions */,
 				29CC0CA71F71347E00E8AC52 /* AuthorizationFlow */,
 				29CC0CA31F7132E900E8AC52 /* Home */,
 				297BF8AA1F7007B900A1FFA2 /* AppBaseCoordinator.swift */,
@@ -201,6 +208,7 @@
 		2985AE161F6AAF500012A537 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				29C95ED91F7250AA00EB2FF9 /* TermsAndConditions */,
 				29CC0CA81F7134C100E8AC52 /* AuthorizationFlow */,
 				29CC0CAA1F71354600E8AC52 /* Home */,
 				296F90E71F6AAD210088C956 /* LaunchScreen.storyboard */,
@@ -242,6 +250,22 @@
 				29C648131F71515100B89DC7 /* YTUser.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		29C95ED91F7250AA00EB2FF9 /* TermsAndConditions */ = {
+			isa = PBXGroup;
+			children = (
+				29C95EDA1F7250D100EB2FF9 /* TermsAndConditions.storyboard */,
+			);
+			name = TermsAndConditions;
+			sourceTree = "<group>";
+		};
+		29C95EDD1F7250F400EB2FF9 /* TermsAndConditions */ = {
+			isa = PBXGroup;
+			children = (
+				29C95EDE1F72511300EB2FF9 /* YTTermsAndConditionsViewController.swift */,
+			);
+			name = TermsAndConditions;
 			sourceTree = "<group>";
 		};
 		29CC0CA31F7132E900E8AC52 /* Home */ = {
@@ -430,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				297BF8A81F6FF51400A1FFA2 /* SignIn.storyboard in Resources */,
+				29C95EDB1F7250D100EB2FF9 /* TermsAndConditions.storyboard in Resources */,
 				296F90E91F6AAD210088C956 /* LaunchScreen.storyboard in Resources */,
 				296F90E61F6AAD210088C956 /* Assets.xcassets in Resources */,
 				29C6480C1F71424C00B89DC7 /* Home.storyboard in Resources */,
@@ -443,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				297BF8A91F6FF51400A1FFA2 /* SignIn.storyboard in Resources */,
+				29C95EDC1F7250D100EB2FF9 /* TermsAndConditions.storyboard in Resources */,
 				298735561F6AD0E1003FAF6C /* LaunchScreen.storyboard in Resources */,
 				298735571F6AD0E1003FAF6C /* Assets.xcassets in Resources */,
 				29C6480D1F71424C00B89DC7 /* Home.storyboard in Resources */,
@@ -598,6 +624,7 @@
 				29C648141F71515100B89DC7 /* YTUser.swift in Sources */,
 				29CC0CA51F71331600E8AC52 /* YTHomeViewController.swift in Sources */,
 				291C2F0D1F6ACAD70047C819 /* YTKeychainHelper.swift in Sources */,
+				29C95EDF1F72511300EB2FF9 /* YTTermsAndConditionsViewController.swift in Sources */,
 				297BF8AB1F7007B900A1FFA2 /* AppBaseCoordinator.swift in Sources */,
 				297BF8B11F700D0100A1FFA2 /* YTSignInViewController.swift in Sources */,
 				291C2F0B1F6AC90D0047C819 /* Constants.swift in Sources */,
@@ -620,6 +647,7 @@
 				29C648151F71515100B89DC7 /* YTUser.swift in Sources */,
 				29CC0CA61F71331600E8AC52 /* YTHomeViewController.swift in Sources */,
 				298735511F6AD0E1003FAF6C /* YTKeychainHelper.swift in Sources */,
+				29C95EE01F72511300EB2FF9 /* YTTermsAndConditionsViewController.swift in Sources */,
 				297BF8AC1F7007B900A1FFA2 /* AppBaseCoordinator.swift in Sources */,
 				297BF8B21F700D0100A1FFA2 /* YTSignInViewController.swift in Sources */,
 				298735521F6AD0E1003FAF6C /* Constants.swift in Sources */,

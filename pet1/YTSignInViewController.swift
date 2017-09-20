@@ -25,12 +25,19 @@ class YTSignInViewController: UIViewController {
         presenter = YTSignInPresenter(withViewController: self)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 
     // MARK: - Actions
     @IBAction func loginAction(_ sender: UIButton) {
         if presenter.validateLogin() {
             presenter?.makeLogin()
                 .then { user -> Void in
+                    
                 // save user
                 }
                 .then { [weak self] _ in

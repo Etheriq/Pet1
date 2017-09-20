@@ -25,9 +25,14 @@ class YTSignInPresenter: YTSignInPresenterProtocol {
     // MARK: - YTSignInPresenterProtocol
     
     func makeLogin() -> Promise<YTUser> {
-        return Promise { fulfill, reject in
-            fulfill(YTUser())
-        }
+        let pending = Promise<YTUser>.pending()
+        pending.fulfill(YTUser())
+        
+        return pending.promise
+        
+//        return Promise { fulfill, reject in
+//            fulfill(YTUser())
+//        }
     }
 
     func validateLogin() -> Bool {
@@ -37,21 +42,22 @@ class YTSignInPresenter: YTSignInPresenterProtocol {
         return true
     }
     
-//    func validate(with login: String, andWithPassword: String) -> Bool {
-//        return true
-//    }
+    func c() {
+        let loginPromise = makeLogin()
+        let ee = makeLogin()
+        
+        loginPromise.then { user in
+            debugPrint(user.dob)
+        }
+        
+        when(fulfilled: loginPromise, ee)
+            .then { u1, u2 -> Void in
+                
+            }
+            .catch { error in
+                // handle error
+            }
 
-    
-//    func c() {
-//        let loginPromise = makeLogin()
-//        
-//        when(fulfilled: loginPromise).then { user in
-//        
-//        }
-    
-//        when(fulfilled: loginPromise).then { user -> Void in
-//            
-//        }
-//    }
+    }
     
 }
