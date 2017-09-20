@@ -43,7 +43,9 @@ class AppBaseCoordinator: Coordinator {
     }
     
     fileprivate func showHomeScreen() {
-        
+        let tabBarCoordinator = YTTabbarCoordinator(with: navigationController)
+        tabBarCoordinator.start()
+        childCoordinators.append(tabBarCoordinator)
     }
 }
 

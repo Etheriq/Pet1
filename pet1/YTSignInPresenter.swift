@@ -6,7 +6,7 @@
 //  Copyright © 2017 xeon.pet1.education. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import PromiseKit
 
 protocol YTSignInPresenterProtocol {

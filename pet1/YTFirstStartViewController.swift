@@ -57,11 +57,12 @@ class YTFirstStartViewController: UIViewController {
     }
     
     func animateGradientColors() {
-//        currentColorIndex = currentColorIndex == (colorArray.count - 1) ? 0 : currentColorIndex + 1
-//        let aninmation = CABasicAnimation(keyPath: "colors")
-//        aninmation.toValue = [UIColor.green.cgColor, UIColor.yellow.cgColor]
-//        aninmation.duration = 10
-//        gradientedBackgroundView.layer.add(aninmation, forKey: nil)
+        currentColorIndex = currentColorIndex == (colorArray.count - 1) ? 0 : currentColorIndex + 1
+        let aninmation = CABasicAnimation(keyPath: "colors")
+        aninmation.toValue = [UIColor.green.cgColor, UIColor.yellow.cgColor]
+        aninmation.duration = 10
+        aninmation.isRemovedOnCompletion = false
+        gradientedBackgroundView.layer.add(aninmation, forKey: nil)
 //
 //        UIView.transition(with: gradientedBackgroundView,
 //                          duration: 2,

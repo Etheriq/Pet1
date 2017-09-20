@@ -21,8 +21,7 @@ class YTAuthorizationFlowCoordinator: Coordinator {
     }
     
     func start() {
-        let storyboard = UIStoryboard(name: "FirstStart", bundle: nil)
-        let startVC = storyboard.instantiateViewController(withIdentifier: "YTFirstStartViewController") as! YTFirstStartViewController
+        let startVC = YTFirstStartViewController.controllerInStoryboard(.firstStart)
         startVC.coordinatorDelegate = self
         
         navigationController.show(startVC, sender: self)
@@ -30,15 +29,13 @@ class YTAuthorizationFlowCoordinator: Coordinator {
     
     // MARK: - Coordinator ways
     fileprivate func showSignIn() {
-        let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
-        let signInVC = storyboard.instantiateViewController(withIdentifier: "YTSignInViewController") as! YTSignInViewController
+        let signInVC = YTSignInViewController.controllerInStoryboard(.signIn)
         signInVC.coordinatorDelegate = self
         
         navigationController.show(signInVC, sender: self)
     }
     fileprivate func showSignUp() {
-        let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
-        let signUpVC = storyboard.instantiateViewController(withIdentifier: "YTSignUpViewController") as! YTSignUpViewController
+        let signUpVC = YTSignUpViewController.controllerInStoryboard(.signUp)
         signUpVC.coordinatorDelegate = self
         
         navigationController.show(signUpVC, sender: self)
@@ -47,8 +44,7 @@ class YTAuthorizationFlowCoordinator: Coordinator {
         
     }
     fileprivate func showTermsAndCond() {
-        let storyboard = UIStoryboard(name: "TermsAndConditions", bundle: nil)
-        let termsVC = storyboard.instantiateViewController(withIdentifier: "YTTermsAndConditionsViewController") as! YTTermsAndConditionsViewController
+        let termsVC = YTTermsAndConditionsViewController.controllerInStoryboard(.termsAndConditions)
         
         navigationController.show(termsVC, sender: self)
     }
