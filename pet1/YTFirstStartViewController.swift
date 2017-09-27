@@ -92,19 +92,11 @@ class YTFirstStartViewController: UIViewController {
     }
     
     @IBAction func signInWithFacebookAction(_ sender: UIButton) {
-//        coordinatorDelegate?.signInWithFBTapped()
-        
         presenter.loginWithFB().then { [weak self] _ -> Void in
-            
-            let accesToken = self?.presenter.getFBAccessToken()
-            debugPrint(accesToken!)
-            
-            
+            self?.coordinatorDelegate?.signInWithFBTapped()
             }.catch { error in
-                
-        }
-        
-        
+                print(error.localizedDescription)
+            }
     }
 
 }

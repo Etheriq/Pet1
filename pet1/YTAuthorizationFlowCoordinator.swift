@@ -66,7 +66,7 @@ extension YTAuthorizationFlowCoordinator: YTFirstStartViewControllerCoordinatorD
         showSignUp()
     }
     func signInWithFBTapped() {
-        showSignInWithFB()
+        showHomeScreen()
     }
     func showTermsAndConditionsTapped() {
         showTermsAndCond()

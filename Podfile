@@ -13,7 +13,7 @@ def standart_pods
 
     pod 'FacebookCore'
     pod 'FacebookLogin'
-    pod 'FacebookShare'
+#    pod 'FacebookShare'
 end
 
 target 'pet1' do

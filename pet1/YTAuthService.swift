@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import PromiseKit
+import FacebookLogin
+import FBSDKCoreKit
 
 protocol AuthServiceProtocol {
     func isAuthorized() -> Bool
+    func getFBAccessToken() -> Promise<String>
+    func fbLogout()
 }
 
 class YTAuthService: AuthServiceProtocol {
@@ -19,7 +24,37 @@ class YTAuthService: AuthServiceProtocol {
     
     // Mark: - AuthServiceProtocol
     func isAuthorized() -> Bool {
-        return true
+        return false
     }
     
+    func getFBAccessToken() -> Promise<String> {
+        let pending = Promise<String>.pending()
+        
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        loginManager.logIn([.publicProfile, .email, .userFriends], viewController: nil) { result in
+            switch result {
+            case .cancelled:
+                debugPrint("canceled")
+            case .failed(let error):
+                print(error.localizedDescription)
+                
+                pending.reject(error)
+            case .success(let grantedPermissions, let declinedPermissions, let userInfo):
+                debugPrint("Token: \(userInfo.authenticationToken)")
+                debugPrint("Token2: \(FBSDKAccessToken.current().tokenString)")
+                debugPrint("Granted: \(grantedPermissions.map { "\($0)" }.joined(separator: " "))")
+                debugPrint("Declined: \(declinedPermissions.map { "\($0)" }.joined(separator: " "))")
+                
+                pending.fulfill(userInfo.authenticationToken)
+            }
+        }
+        
+        return pending.promise
+    }
+    
+    func fbLogout() {
+        let loginManager = LoginManager()
+        loginManager.logOut()
+    }
 }
