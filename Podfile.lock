@@ -1,5 +1,17 @@
 PODS:
   - Alamofire (4.5.1)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FBSDKCoreKit (4.26.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.26.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.26.0):
+    - FBSDKCoreKit
   - FXKeychain (1.5.3)
   - Moya (9.0.0):
     - Moya/Core (= 9.0.0)
@@ -27,6 +39,10 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Bolts
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - FXKeychain
   - Moya
   - ObjectMapper
@@ -35,6 +51,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FBSDKCoreKit: c8b8582311ec11b145451d8b9717dc6cc2ae5a76
+  FBSDKLoginKit: f3f03b94c21eb834af243c0a881d48641f47ca60
+  FBSDKShareKit: 320712d8293fde6392872c91eb80ef0da5d73cc3
   FXKeychain: 2fe54573946ffef634f4e2a2851e6c8f4ea15e76
   Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
@@ -43,6 +63,6 @@ SPEC CHECKSUMS:
   RealmSwift: 34073ad3a31232bbaf7c0db898c037940284cba2
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
 
-PODFILE CHECKSUM: dac171dea1437931f8539d61a569c0caf77ca3f8
+PODFILE CHECKSUM: d18c22ea6d8ba5cbedf7e046c411d088340c2303
 
 COCOAPODS: 1.3.1

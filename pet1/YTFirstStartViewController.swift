@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 protocol YTFirstStartViewControllerCoordinatorDelegate: class {
     func signInTapped()
@@ -21,14 +22,15 @@ class YTFirstStartViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     
     weak var coordinatorDelegate: YTFirstStartViewControllerCoordinatorDelegate?
-    
+    var presenter: YTFirstStartPresenter!
     var colorArray: [(color1: UIColor, color2: UIColor)] = []
     var currentColorIndex = -1
     var isAnimationStoped: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        presenter = YTFirstStartPresenter(withViewController: self)
         configureGradientColors()
         
     }
@@ -90,7 +92,19 @@ class YTFirstStartViewController: UIViewController {
     }
     
     @IBAction func signInWithFacebookAction(_ sender: UIButton) {
-        coordinatorDelegate?.signInWithFBTapped()
+//        coordinatorDelegate?.signInWithFBTapped()
+        
+        presenter.loginWithFB().then { [weak self] _ -> Void in
+            
+            let accesToken = self?.presenter.getFBAccessToken()
+            debugPrint(accesToken!)
+            
+            
+            }.catch { error in
+                
+        }
+        
+        
     }
 
 }

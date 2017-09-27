@@ -10,6 +10,11 @@ def standart_pods
     pod 'PromiseKit'
     pod 'FXKeychain'
     pod 'RealmSwift'
+    
+    pod 'Bolts'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKShareKit'
+    pod 'FBSDKLoginKit'
 end
 
 target 'pet1' do

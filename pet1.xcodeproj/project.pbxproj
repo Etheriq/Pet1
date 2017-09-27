@@ -21,6 +21,8 @@
 		296F90E41F6AAD210088C956 /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E21F6AAD210088C956 /* FirstStart.storyboard */; };
 		296F90E61F6AAD210088C956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E51F6AAD210088C956 /* Assets.xcassets */; };
 		296F90E91F6AAD210088C956 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E71F6AAD210088C956 /* LaunchScreen.storyboard */; };
+		29708B251F7BEF0700A491FA /* YTFirstStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29708B241F7BEF0700A491FA /* YTFirstStartPresenter.swift */; };
+		29708B261F7BEF0700A491FA /* YTFirstStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29708B241F7BEF0700A491FA /* YTFirstStartPresenter.swift */; };
 		297BF89E1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */; };
 		297BF89F1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */; };
 		297BF8A21F6FCFEF00A1FFA2 /* YTGradientedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8A11F6FCFEF00A1FFA2 /* YTGradientedView.swift */; };
@@ -100,6 +102,7 @@
 		296F90E51F6AAD210088C956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		296F90E81F6AAD210088C956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		296F90EA1F6AAD210088C956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29708B241F7BEF0700A491FA /* YTFirstStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTFirstStartPresenter.swift; sourceTree = "<group>"; };
 		297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFirstStartViewController.swift; sourceTree = "<group>"; };
 		297BF8A11F6FCFEF00A1FFA2 /* YTGradientedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTGradientedView.swift; sourceTree = "<group>"; };
 		297BF8A71F6FF51400A1FFA2 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */,
+				29708B241F7BEF0700A491FA /* YTFirstStartPresenter.swift */,
 			);
 			name = FirstStart;
 			sourceTree = "<group>";
@@ -642,6 +646,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pet1_dev/Pods-pet1_dev-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FXKeychain/FXKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -653,6 +661,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -704,6 +716,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pet1/Pods-pet1-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FXKeychain/FXKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -715,6 +731,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -736,6 +756,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C95EF21F72B6D200EB2FF9 /* UIView+Extension.swift in Sources */,
+				29708B251F7BEF0700A491FA /* YTFirstStartPresenter.swift in Sources */,
 				29CAA16D1F7BCDCA009DB7C4 /* YTListViewController.swift in Sources */,
 				291C2F081F6ABD4A0047C819 /* YTDatabase.swift in Sources */,
 				292100891F7BD62B00536B70 /* YTListCoordinator.swift in Sources */,
@@ -770,6 +791,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C95EF31F72B6D200EB2FF9 /* UIView+Extension.swift in Sources */,
+				29708B261F7BEF0700A491FA /* YTFirstStartPresenter.swift in Sources */,
 				29CAA16E1F7BCDCA009DB7C4 /* YTListViewController.swift in Sources */,
 				2987354E1F6AD0E1003FAF6C /* YTDatabase.swift in Sources */,
 				2921008A1F7BD62B00536B70 /* YTListCoordinator.swift in Sources */,
@@ -975,7 +997,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: eKreative LLP (DJNZKXGF8V)";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "pet1_dev-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xeon.pet1.education.io.pet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -995,7 +1017,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: eKreative LLP (DJNZKXGF8V)";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "pet1_dev-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xeon.pet1.education.io.pet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
