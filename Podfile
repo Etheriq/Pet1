@@ -10,11 +10,10 @@ def standart_pods
     pod 'PromiseKit'
     pod 'FXKeychain'
     pod 'RealmSwift'
-    
-    pod 'Bolts'
-    pod 'FBSDKCoreKit'
-    pod 'FBSDKShareKit'
-    pod 'FBSDKLoginKit'
+
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'FacebookShare'
 end
 
 target 'pet1' do
@@ -23,6 +22,8 @@ end
 
 target 'pet1_dev' do
     standart_pods
+
+    pod 'netfox'
 end
 
 post_install do |installer|
