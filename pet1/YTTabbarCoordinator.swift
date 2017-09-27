@@ -28,16 +28,23 @@ class YTTabbarCoordinator: Coordinator {
 extension YTTabbarCoordinator: YTBaseTabBarControllerCoordinatorDelegate {
     func homeItemSelectedWith(navigationController: UINavigationController) {
         guard navigationController.viewControllers.isEmpty else { return }
+        
+        let homeCoordinator = YTHomeCoordinator(with: navigationController)
+        homeCoordinator.start()
+        addChildCoordinator(coordinator: homeCoordinator)
     }
     func listItemSelectedWith(navigationController: UINavigationController) {
         guard navigationController.viewControllers.isEmpty else { return }
         
-        // create items coordinator and start them
-        
+        let listCoordinator = YTListCoordinator(with: navigationController)
+        listCoordinator.start()
+        addChildCoordinator(coordinator: listCoordinator)
     }
     func settingsItemSelectedWith(navigationController: UINavigationController) {
         guard navigationController.viewControllers.isEmpty else { return }
         
-        // create settings coordinator and start them
+        let settingsCoordinator = YTSettingsCoordinator(with: navigationController)
+        settingsCoordinator.start()
+        addChildCoordinator(coordinator: settingsCoordinator)
     }
 }

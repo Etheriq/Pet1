@@ -14,4 +14,7 @@ enum YTStoryboards: String {
     case signUp = "SignUp"
     case tabbar = "Tabbar"
     case termsAndConditions = "TermsAndConditions"
+    case home = "Home"
+    case list = "List"
+    case settings = "Settings"
 }

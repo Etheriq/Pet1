@@ -20,7 +20,6 @@ class AppBaseCoordinator: Coordinator {
     init(with navigationController: UINavigationController, andWithAuthService: YTAuthService) {
         self.navigationController = navigationController
         self.authService = andWithAuthService
-        
     }
     
     deinit {

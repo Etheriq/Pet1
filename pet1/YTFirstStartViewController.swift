@@ -57,26 +57,26 @@ class YTFirstStartViewController: UIViewController {
     }
     
     func animateGradientColors() {
+        //        let aninmation = CABasicAnimation(keyPath: "colors")
+        //        aninmation.toValue = [UIColor.green.cgColor, UIColor.yellow.cgColor]
+        //        aninmation.duration = 10
+        //        aninmation.isRemovedOnCompletion = false
+        //        gradientedBackgroundView.layer.add(aninmation, forKey: nil)
+        
         currentColorIndex = currentColorIndex == (colorArray.count - 1) ? 0 : currentColorIndex + 1
-        let aninmation = CABasicAnimation(keyPath: "colors")
-        aninmation.toValue = [UIColor.green.cgColor, UIColor.yellow.cgColor]
-        aninmation.duration = 10
-        aninmation.isRemovedOnCompletion = false
-        gradientedBackgroundView.layer.add(aninmation, forKey: nil)
-//
-//        UIView.transition(with: gradientedBackgroundView,
-//                          duration: 2,
-//                          options: [.transitionCrossDissolve],
-//                          animations: { [weak self] in
-//                            guard let weakSelf = self else { return }
-//                            
-//                            weakSelf.gradientedBackgroundView.firstColor = weakSelf.colorArray[weakSelf.currentColorIndex].color1
-//                            weakSelf.gradientedBackgroundView.secondColor = weakSelf.colorArray[weakSelf.currentColorIndex].color2
-//        }) { [weak self] (success) in
-//            guard let weakSelf = self, weakSelf.isAnimationStoped else { return }
-//            
-//            weakSelf.animateGradientColors()
-//        }
+        UIView.transition(with: gradientedBackgroundView,
+                          duration: 2,
+                          options: [.transitionCrossDissolve],
+                          animations: { [weak self] in
+                            guard let weakSelf = self else { return }
+                            
+                            weakSelf.gradientedBackgroundView.firstColor = weakSelf.colorArray[weakSelf.currentColorIndex].color1
+                            weakSelf.gradientedBackgroundView.secondColor = weakSelf.colorArray[weakSelf.currentColorIndex].color2
+        }) { [weak self] (success) in
+            guard let weakSelf = self, weakSelf.isAnimationStoped else { return }
+            
+            weakSelf.animateGradientColors()
+        }
     }
     
     // MARK: - Actions

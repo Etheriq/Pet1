@@ -49,11 +49,12 @@ class YTAuthorizationFlowCoordinator: Coordinator {
         navigationController.show(termsVC, sender: self)
     }
     
-    func showHomeScreen() {
-//        removeChildCoordinator(coordinator: self)
+    fileprivate func showHomeScreen() {
+        removeChildCoordinator(coordinator: self)
         
-        // create home coordinator and make start()
-// TODO: Think about this: maybe need clear navigation stack VC
+        let tabBarCoordinator = YTTabbarCoordinator(with: navigationController)
+        tabBarCoordinator.start()
+        addChildCoordinator(coordinator: tabBarCoordinator)
     }
 }
 

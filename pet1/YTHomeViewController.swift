@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol YTHomeViewControllerCoordinatorDelegate: class {
+    func showSomethingTapped()
+}
+
 class YTHomeViewController: UIViewController {
 
+    weak var coordinatorDelegate: YTHomeViewControllerCoordinatorDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

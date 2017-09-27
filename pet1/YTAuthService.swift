@@ -19,7 +19,7 @@ class YTAuthService: AuthServiceProtocol {
     
     // Mark: - AuthServiceProtocol
     func isAuthorized() -> Bool {
-        return false
+        return true
     }
     
 }
