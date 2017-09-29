@@ -10,8 +10,7 @@ import Foundation
 import PromiseKit
 
 class YTFirstStartPresenter {
-    fileprivate let vc: YTFirstStartViewController
-    
+    weak var vc: YTFirstStartViewController?
     private let authService: YTAuthService
     
     init(withViewController vc:YTFirstStartViewController) {

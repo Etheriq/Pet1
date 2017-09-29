@@ -43,10 +43,17 @@ class YTAuthorizationFlowCoordinator: Coordinator {
     fileprivate func showSignInWithFB() {
         
     }
-    fileprivate func showTermsAndCond() {
+    fileprivate func showTermsAndCond(modal: Bool) {
         let termsVC = YTTermsAndConditionsViewController.controllerInStoryboard(.termsAndConditions)
+        termsVC.coordinatorDelegate = self
+        termsVC.isModalPresenting = modal
         
-        navigationController.show(termsVC, sender: self)
+        if modal {
+            let navVC = UINavigationController(rootViewController: termsVC)
+            navigationController.present(navVC, animated: true, completion: nil)
+        } else {
+            navigationController.show(termsVC, sender: self)
+        }
     }
     
     fileprivate func showHomeScreen() {
@@ -68,8 +75,8 @@ extension YTAuthorizationFlowCoordinator: YTFirstStartViewControllerCoordinatorD
     func signInWithFBTapped() {
         showHomeScreen()
     }
-    func showTermsAndConditionsTapped() {
-        showTermsAndCond()
+    func showTermsAndConditionsTapped(modal: Bool) {
+        showTermsAndCond(modal: true)
     }
 }
 
@@ -85,7 +92,14 @@ extension YTAuthorizationFlowCoordinator: YTSignInViewControllerCoordinatorDeleg
     }
 }
 
-
+extension YTAuthorizationFlowCoordinator: YTTermsAndConditionsViewControllerCoordinatorDelegate {
+    func applyTapped(vc: YTTermsAndConditionsViewController) {
+        
+    }
+    func cancelTapped(vc: YTTermsAndConditionsViewController) {
+        vc.dismiss(animated: true, completion: nil)
+    }
+}
 
 
 

@@ -13,13 +13,14 @@ protocol YTFirstStartViewControllerCoordinatorDelegate: class {
     func signInTapped()
     func signUpTapped()
     func signInWithFBTapped()
-    func showTermsAndConditionsTapped()
+    func showTermsAndConditionsTapped(modal: Bool)
 }
 
 class YTFirstStartViewController: UIViewController {
 
     @IBOutlet weak var gradientedBackgroundView: YTGradientedView!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var termsAndConditionsLable: UILabel!
     
     weak var coordinatorDelegate: YTFirstStartViewControllerCoordinatorDelegate?
     var presenter: YTFirstStartPresenter!
@@ -33,6 +34,8 @@ class YTFirstStartViewController: UIViewController {
         presenter = YTFirstStartPresenter(withViewController: self)
         configureGradientColors()
         
+        let termsGuesture = UITapGestureRecognizer(target: self, action: #selector(termsAndConditiionLabelTapped))
+        self.termsAndConditionsLable.addGestureRecognizer(termsGuesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +82,11 @@ class YTFirstStartViewController: UIViewController {
             
             weakSelf.animateGradientColors()
         }
+    }
+    
+    // MARK: - Helpers
+    func termsAndConditiionLabelTapped() {
+        coordinatorDelegate?.showTermsAndConditionsTapped(modal: true)
     }
     
     // MARK: - Actions
