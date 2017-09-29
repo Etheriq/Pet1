@@ -9,6 +9,9 @@
 import UIKit
 import RealmSwift
 import FacebookCore
+#if TESTING
+import netfox
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         YTDatabase.shared.initializeRealm()
+        
+        #if TESTING
+            NFX.sharedInstance().start()
+        #endif
         
         let navigationController = UINavigationController()
         window = UIWindow(frame: UIScreen.main.bounds)
