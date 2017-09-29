@@ -23,6 +23,7 @@ class YTListCoordinator: Coordinator {
         showList()
     }
     
+    // MARK: - Coordinator actions
     fileprivate func showList() {
         let listVC = YTListViewController.controllerInStoryboard(.list)
         listVC.coordinatorDelegate = self

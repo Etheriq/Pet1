@@ -34,17 +34,17 @@ class AppBaseCoordinator: Coordinator {
         }
     }
     
-    // Mark: - Coordinator actions
+    // MARK: - Coordinator actions
     fileprivate func showStartScreen() {
         let startCoordinator = YTAuthorizationFlowCoordinator(with: navigationController)
         startCoordinator.start()
-        childCoordinators.append(startCoordinator)
+        addChildCoordinator(coordinator: startCoordinator)
     }
     
     fileprivate func showHomeScreen() {
         let tabBarCoordinator = YTTabbarCoordinator(with: navigationController)
         tabBarCoordinator.start()
-        childCoordinators.append(tabBarCoordinator)
+        addChildCoordinator(coordinator: tabBarCoordinator)
     }
 }
 

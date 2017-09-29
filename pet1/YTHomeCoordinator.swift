@@ -22,7 +22,8 @@ class YTHomeCoordinator: Coordinator {
     func start() {
         showHome()
     }
-    
+
+    // MARK: - Coordinator actions
     fileprivate func showHome() {
         let homeVC = YTHomeViewController.controllerInStoryboard(.home)
         homeVC.coordinatorDelegate = self

@@ -27,7 +27,7 @@ class YTAuthorizationFlowCoordinator: Coordinator {
         navigationController.show(startVC, sender: self)
     }
     
-    // MARK: - Coordinator ways
+    // MARK: - Coordinator actions
     fileprivate func showSignIn() {
         let signInVC = YTSignInViewController.controllerInStoryboard(.signIn)
         signInVC.coordinatorDelegate = self
@@ -54,7 +54,7 @@ class YTAuthorizationFlowCoordinator: Coordinator {
         
         let tabBarCoordinator = YTTabbarCoordinator(with: navigationController)
         tabBarCoordinator.start()
-        addChildCoordinator(coordinator: tabBarCoordinator)
+        addChildCoordinator(coordinator: tabBarCoordinator)        
     }
 }
 

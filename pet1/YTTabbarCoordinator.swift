@@ -21,6 +21,7 @@ class YTTabbarCoordinator: Coordinator {
     }
     
     func start() {
+        
         tabbar?.tabBarItemCoordinatorDelegate = self
     }
 }

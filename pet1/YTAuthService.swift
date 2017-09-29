@@ -17,6 +17,11 @@ protocol AuthServiceProtocol {
     func fbLogout()
 }
 
+enum AuthErrors: Error {
+    case signInFBCanceled
+    case signInFBError(error: Error)
+}
+
 class YTAuthService: AuthServiceProtocol {
     
     static let shared = YTAuthService()
@@ -36,10 +41,11 @@ class YTAuthService: AuthServiceProtocol {
             switch result {
             case .cancelled:
                 debugPrint("canceled")
+                pending.reject(AuthErrors.signInFBCanceled)
             case .failed(let error):
                 print(error.localizedDescription)
                 
-                pending.reject(error)
+                pending.reject(AuthErrors.signInFBError(error: error))
             case .success(let grantedPermissions, let declinedPermissions, let userInfo):
                 debugPrint("Token: \(userInfo.authenticationToken)")
                 debugPrint("Token2: \(FBSDKAccessToken.current().tokenString)")

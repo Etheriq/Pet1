@@ -23,6 +23,7 @@ class YTSettingsCoordinator: Coordinator {
         showSettings()
     }
     
+    // MARK: - Coordinator actions
     fileprivate func showSettings() {
         let settingsVC = YTSettingsViewController.controllerInStoryboard(.settings)
         settingsVC.coordinatorDelegate = self

@@ -9,14 +9,9 @@
 import Foundation
 import PromiseKit
 
-enum LoginError: Error {
-    case fbLoginError
-}
-
 class YTFirstStartPresenter {
     fileprivate let vc: YTFirstStartViewController
     
-    private var fbAccessToken: String?
     private let authService: YTAuthService
     
     init(withViewController vc:YTFirstStartViewController) {
@@ -25,31 +20,28 @@ class YTFirstStartPresenter {
     }
     
     func loginWithFB() -> Promise<YTUser> {
-        let pending = Promise<YTUser>.pending()
+        let pendingOutside = Promise<YTUser>.pending()
         
         authService.getFBAccessToken().then { token -> Promise<YTUser> in
-            self.fbAccessToken = token
-            
             let pending = Promise<YTUser>.pending()
+            
             // make call api with fb token
             pending.fulfill(YTUser())
             
             return pending.promise
-            }.then { user -> Promise<YTUser> in
+            }.then { user -> Void in
                 // save user and etc
+                debugPrint("save user")
+                pendingOutside.fulfill(user)
                 
-                return Promise { fulfill, reject in
-                    fulfill(user)
-                }
+//                return Promise { fulfill, reject in
+//                    fulfill(user)
+//                }
             }.catch { error in
+                pendingOutside.reject(error)
                 print(error.localizedDescription)
         }
         
-        return pending.promise
+        return pendingOutside.promise
     }
-    
-    func getFBAccessToken() -> String? {
-        return fbAccessToken
-    }
-    
 }
