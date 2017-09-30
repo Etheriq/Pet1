@@ -43,4 +43,14 @@ class YTFirstStartPresenter {
         
         return pendingOutside.promise
     }
+    
+    func a() {
+        YTRequestManager.request(params: YTUserRequest.getUserWithId(userId: 2))
+            .then{ json in
+                print(json)
+            }
+            .catch { error in
+                print(error.localizedDescription)
+        }
+    }
 }

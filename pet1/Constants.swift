@@ -13,7 +13,7 @@ class Constants {
     static let keyApiToken =  Bundle.main.bundleIdentifier! + "_api_key"
     static let keyDeviceID =  Bundle.main.bundleIdentifier! + "_device_id"
     static let keyPushToken =  Bundle.main.bundleIdentifier! + "_push_token"
-    
+    static let apiHeaderAuthentificationKey = "x-api-key"
     static let userIdentifiedKey = "userIdentifiedKey"
     
 }
