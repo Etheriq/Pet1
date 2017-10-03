@@ -12,10 +12,12 @@ import PromiseKit
 class YTFirstStartPresenter {
     weak var vc: YTFirstStartViewController?
     private let authService: YTAuthService
+    var manager: YTRequestProtocol!
     
     init(withViewController vc:YTFirstStartViewController) {
         self.vc = vc
         authService = YTAuthService.shared
+        manager = YTRequestManager.shared
     }
     
     func loginWithFB() -> Promise<YTUser> {
@@ -45,12 +47,13 @@ class YTFirstStartPresenter {
     }
     
     func a() {
-        YTRequestManager.request(params: YTUserRequest.getUserWithId(userId: 2))
-            .then{ json in
-                print(json)
+        manager
+            .request(params: YTUserRequest.getMe, additionalParameters: nil, additionalHeader: nil)
+            .then { json in
+                debugPrint(json)
             }
             .catch { error in
-                print(error.localizedDescription)
+                debugPrint(error.localizedDescription)
         }
     }
 }

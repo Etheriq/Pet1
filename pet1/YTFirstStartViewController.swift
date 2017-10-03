@@ -36,6 +36,23 @@ class YTFirstStartViewController: UIViewController {
         
         let termsGuesture = UITapGestureRecognizer(target: self, action: #selector(termsAndConditiionLabelTapped))
         self.termsAndConditionsLable.addGestureRecognizer(termsGuesture)
+        
+        
+
+        let image = UIImage(named: "ic_test")
+        let data = UIImageJPEGRepresentation(image!, 0.8)
+        YTRequestManager
+            .shared
+            .request(params: YTUserRequest.uploadImage(imageData: data!))
+            .then{ json in
+                print(json)
+            }
+            .catch { error in
+                print(error.localizedDescription)
+        }
+
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

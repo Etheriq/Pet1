@@ -87,6 +87,15 @@ extension YTUserRequest {
         }
     }
     
+    var taskType: YTRequestTaskType {
+        switch self {
+        case .uploadAvatar(let data), .uploadImage(let data):
+            return .upload(data: data)
+        default:
+            return .request
+        }
+    }
+    
     var headers: [String: String] {
         var header = [Constants.apiHeaderAuthentificationKey : YTKeychainHelper.getApiToken() ?? ""]
         

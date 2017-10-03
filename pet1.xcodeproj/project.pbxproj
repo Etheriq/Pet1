@@ -13,10 +13,10 @@
 		291C2F0D1F6ACAD70047C819 /* YTKeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C2F0C1F6ACAD70047C819 /* YTKeychainHelper.swift */; };
 		291E654A1F7F09E1000F1133 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E65491F7F09E1000F1133 /* Dictionary+Extension.swift */; };
 		291E654B1F7F09E1000F1133 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E65491F7F09E1000F1133 /* Dictionary+Extension.swift */; };
-		291E654E1F7F1AA9000F1133 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E654D1F7F1AA9000F1133 /* User.swift */; };
-		291E654F1F7F1AA9000F1133 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E654D1F7F1AA9000F1133 /* User.swift */; };
-		291E65511F7F1ABE000F1133 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E65501F7F1ABE000F1133 /* Other.swift */; };
-		291E65521F7F1ABE000F1133 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E65501F7F1ABE000F1133 /* Other.swift */; };
+		291E654E1F7F1AA9000F1133 /* YTUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E654D1F7F1AA9000F1133 /* YTUserRequest.swift */; };
+		291E654F1F7F1AA9000F1133 /* YTUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E654D1F7F1AA9000F1133 /* YTUserRequest.swift */; };
+		291E65511F7F1ABE000F1133 /* YTOtherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E65501F7F1ABE000F1133 /* YTOtherRequest.swift */; };
+		291E65521F7F1ABE000F1133 /* YTOtherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E65501F7F1ABE000F1133 /* YTOtherRequest.swift */; };
 		292100891F7BD62B00536B70 /* YTListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292100881F7BD62B00536B70 /* YTListCoordinator.swift */; };
 		2921008A1F7BD62B00536B70 /* YTListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292100881F7BD62B00536B70 /* YTListCoordinator.swift */; };
 		2921008C1F7BDA1300536B70 /* YTSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921008B1F7BDA1300536B70 /* YTSettingsCoordinator.swift */; };
@@ -102,8 +102,8 @@
 		291C2F0A1F6AC90D0047C819 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		291C2F0C1F6ACAD70047C819 /* YTKeychainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTKeychainHelper.swift; sourceTree = "<group>"; };
 		291E65491F7F09E1000F1133 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
-		291E654D1F7F1AA9000F1133 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		291E65501F7F1ABE000F1133 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
+		291E654D1F7F1AA9000F1133 /* YTUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTUserRequest.swift; sourceTree = "<group>"; };
+		291E65501F7F1ABE000F1133 /* YTOtherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTOtherRequest.swift; sourceTree = "<group>"; };
 		292100881F7BD62B00536B70 /* YTListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTListCoordinator.swift; sourceTree = "<group>"; };
 		2921008B1F7BDA1300536B70 /* YTSettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTSettingsCoordinator.swift; sourceTree = "<group>"; };
 		292100901F7BE21300536B70 /* YTHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTHomeCoordinator.swift; sourceTree = "<group>"; };
@@ -176,8 +176,8 @@
 		291E654C1F7F1A91000F1133 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				291E654D1F7F1AA9000F1133 /* User.swift */,
-				291E65501F7F1ABE000F1133 /* Other.swift */,
+				291E654D1F7F1AA9000F1133 /* YTUserRequest.swift */,
+				291E65501F7F1ABE000F1133 /* YTOtherRequest.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -793,11 +793,11 @@
 				29708B251F7BEF0700A491FA /* YTFirstStartPresenter.swift in Sources */,
 				29CAA16D1F7BCDCA009DB7C4 /* YTListViewController.swift in Sources */,
 				291C2F081F6ABD4A0047C819 /* YTDatabase.swift in Sources */,
-				291E654E1F7F1AA9000F1133 /* User.swift in Sources */,
+				291E654E1F7F1AA9000F1133 /* YTUserRequest.swift in Sources */,
 				297F0F871F7EEF3D0013C1EF /* YTRequestManager.swift in Sources */,
 				292100891F7BD62B00536B70 /* YTListCoordinator.swift in Sources */,
 				29C95EE21F72645800EB2FF9 /* YTBaseTabBarController.swift in Sources */,
-				291E65511F7F1ABE000F1133 /* Other.swift in Sources */,
+				291E65511F7F1ABE000F1133 /* YTOtherRequest.swift in Sources */,
 				29CC0C9B1F70F58800E8AC52 /* YTSignUpViewController.swift in Sources */,
 				2921008C1F7BDA1300536B70 /* YTSettingsCoordinator.swift in Sources */,
 				296F90DF1F6AAD210088C956 /* AppDelegate.swift in Sources */,
@@ -832,11 +832,11 @@
 				29708B261F7BEF0700A491FA /* YTFirstStartPresenter.swift in Sources */,
 				29CAA16E1F7BCDCA009DB7C4 /* YTListViewController.swift in Sources */,
 				2987354E1F6AD0E1003FAF6C /* YTDatabase.swift in Sources */,
-				291E654F1F7F1AA9000F1133 /* User.swift in Sources */,
+				291E654F1F7F1AA9000F1133 /* YTUserRequest.swift in Sources */,
 				297F0F881F7EEF3D0013C1EF /* YTRequestManager.swift in Sources */,
 				2921008A1F7BD62B00536B70 /* YTListCoordinator.swift in Sources */,
 				29C95EE31F72645800EB2FF9 /* YTBaseTabBarController.swift in Sources */,
-				291E65521F7F1ABE000F1133 /* Other.swift in Sources */,
+				291E65521F7F1ABE000F1133 /* YTOtherRequest.swift in Sources */,
 				29CC0C9C1F70F58800E8AC52 /* YTSignUpViewController.swift in Sources */,
 				2921008D1F7BDA1300536B70 /* YTSettingsCoordinator.swift in Sources */,
 				298735501F6AD0E1003FAF6C /* AppDelegate.swift in Sources */,

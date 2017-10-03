@@ -16,7 +16,7 @@ protocol YTSignInPresenterProtocol {
 
 class YTSignInPresenter: YTSignInPresenterProtocol {
 
-    fileprivate let vc: YTSignInViewController
+    weak var vc: YTSignInViewController?
     
     init(withViewController vc: YTSignInViewController) {
         self.vc = vc
@@ -36,8 +36,8 @@ class YTSignInPresenter: YTSignInPresenterProtocol {
     }
 
     func validateLogin() -> Bool {
-        guard let login = vc.loginTextField.text, !login.isEmpty else { return false }
-        guard let password = vc.passwordTextField.text, !password.isEmpty else { return false }
+        guard let login = vc?.loginTextField.text, !login.isEmpty else { return false }
+        guard let password = vc?.passwordTextField.text, !password.isEmpty else { return false }
         
         return true
     }
