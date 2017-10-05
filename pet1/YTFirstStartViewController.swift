@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import FBSDKLoginKit
+import GoogleSignIn
+import Google
 
 protocol YTFirstStartViewControllerCoordinatorDelegate: class {
     func signInTapped()
@@ -21,6 +22,7 @@ class YTFirstStartViewController: UIViewController {
     @IBOutlet weak var gradientedBackgroundView: YTGradientedView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var termsAndConditionsLable: UILabel!
+    @IBOutlet weak var googleButtonView: UIView!
     
     weak var coordinatorDelegate: YTFirstStartViewControllerCoordinatorDelegate?
     var presenter: YTFirstStartPresenter!
@@ -37,6 +39,18 @@ class YTFirstStartViewController: UIViewController {
         let termsGuesture = UITapGestureRecognizer(target: self, action: #selector(termsAndConditiionLabelTapped))
         self.termsAndConditionsLable.addGestureRecognizer(termsGuesture)
         
+        //  tests
+        
+        var googleError: NSError?
+        GGLContext.sharedInstance().configureWithError(&googleError)
+        if googleError != nil {
+            return
+        }
+        
+        GIDSignIn.sharedInstance().delegate = self
+
+        let googleButton = GIDSignInButton()
+        googleButtonView.addSubview(googleButton)
         
 
         let image = UIImage(named: "ic_test")
@@ -123,5 +137,19 @@ class YTFirstStartViewController: UIViewController {
                 print(error.localizedDescription)
             }
     }
-
+    
+    @IBAction func signInWithGoogleAction(_ sender: UIButton) {
+        
+    }
 }
+
+extension YTFirstStartViewController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            return
+        }
+        
+        let accesToken = user.authentication.accessToken
+    }
+}
+

@@ -35,14 +35,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9WB-Vm-G8z" userLabel="LogoImage">
-                                <rect key="frame" x="40" y="52" width="240" height="270"/>
+                                <rect key="frame" x="40" y="52" width="240" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="5rx-5x-ULe"/>
+                                    <constraint firstAttribute="height" constant="240" id="5rx-5x-ULe"/>
                                     <constraint firstAttribute="width" constant="240" id="rNq-2z-fzS"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-9q-XDj" userLabel="SignInButton" customClass="YTRoundedButton" customModule="pet1" customModuleProvider="target">
-                                <rect key="frame" x="60" y="367" width="200" height="40"/>
+                                <rect key="frame" x="60" y="317" width="200" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="GAe-xv-FxW"/>
@@ -76,7 +76,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oz-Fu-lFD" userLabel="SignUpButton" customClass="YTRoundedButton" customModule="pet1" customModuleProvider="target">
-                                <rect key="frame" x="60" y="423" width="200" height="40"/>
+                                <rect key="frame" x="60" y="373" width="200" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8UW-Q0-GuP"/>
@@ -110,7 +110,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6T-Na-hqt" userLabel="FBButton" customClass="YTRoundedButton" customModule="pet1" customModuleProvider="target">
-                                <rect key="frame" x="60" y="479" width="200" height="40"/>
+                                <rect key="frame" x="60" y="429" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.61568627450000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="So9-Ix-Jh6"/>
@@ -143,6 +143,14 @@
                                     <action selector="signInWithFacebookAction:" destination="xom-de-21B" eventType="touchUpInside" id="6Dt-Wu-xFc"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eod-hX-ZEr" userLabel="googleButtonContainerView">
+                                <rect key="frame" x="60" y="485" width="200" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="88X-xd-U9Z"/>
+                                    <constraint firstAttribute="height" constant="40" id="RR5-bC-1ei"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read the Terms and Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyt-42-ec4" userLabel="terms and conditions">
                                 <rect key="frame" x="40.5" y="531" width="239.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -155,6 +163,7 @@
                             <constraint firstAttribute="trailing" secondItem="0ru-t8-KKZ" secondAttribute="trailing" id="1Ej-Ei-Vx4"/>
                             <constraint firstItem="9WB-Vm-G8z" firstAttribute="top" secondItem="Gi6-gp-Qf2" secondAttribute="bottom" constant="32" id="1RU-GA-T2J"/>
                             <constraint firstItem="E7M-Qw-Fk0" firstAttribute="top" secondItem="0ru-t8-KKZ" secondAttribute="bottom" id="6Wi-Un-M8v"/>
+                            <constraint firstItem="eod-hX-ZEr" firstAttribute="centerX" secondItem="o0Q-7C-rGR" secondAttribute="centerX" id="7Ep-29-gqu"/>
                             <constraint firstItem="Z6T-Na-hqt" firstAttribute="top" secondItem="9Oz-Fu-lFD" secondAttribute="bottom" constant="16" id="8bz-4K-Kfn"/>
                             <constraint firstItem="9Oz-Fu-lFD" firstAttribute="centerX" secondItem="o0Q-7C-rGR" secondAttribute="centerX" id="N1E-8V-mwG"/>
                             <constraint firstItem="0ru-t8-KKZ" firstAttribute="leading" secondItem="o0Q-7C-rGR" secondAttribute="leading" id="O3C-wS-ubF"/>
@@ -165,12 +174,14 @@
                             <constraint firstItem="9Oz-Fu-lFD" firstAttribute="top" secondItem="yhL-9q-XDj" secondAttribute="bottom" constant="16" id="hxT-zC-eOL"/>
                             <constraint firstItem="0ru-t8-KKZ" firstAttribute="top" secondItem="Gi6-gp-Qf2" secondAttribute="bottom" id="pnl-eA-o5X"/>
                             <constraint firstItem="Gyt-42-ec4" firstAttribute="centerX" secondItem="o0Q-7C-rGR" secondAttribute="centerX" id="qyL-fT-Rqo"/>
-                            <constraint firstItem="yhL-9q-XDj" firstAttribute="top" secondItem="9WB-Vm-G8z" secondAttribute="bottom" constant="45" id="zJw-C2-EnU"/>
+                            <constraint firstItem="eod-hX-ZEr" firstAttribute="top" secondItem="Z6T-Na-hqt" secondAttribute="bottom" constant="16" id="tTj-id-SsQ"/>
+                            <constraint firstItem="yhL-9q-XDj" firstAttribute="top" secondItem="9WB-Vm-G8z" secondAttribute="bottom" constant="25" id="zJw-C2-EnU"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="googleButtonView" destination="eod-hX-ZEr" id="qKF-bm-ViC"/>
                         <outlet property="gradientedBackgroundView" destination="0ru-t8-KKZ" id="8XH-UF-t8w"/>
                         <outlet property="logoImage" destination="9WB-Vm-G8z" id="CX9-C3-OhS"/>
                         <outlet property="termsAndConditionsLable" destination="Gyt-42-ec4" id="GpX-Zg-yaS"/>
@@ -178,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="woc-OB-pR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-184" y="16"/>
+            <point key="canvasLocation" x="-185.625" y="15.845070422535212"/>
         </scene>
     </scenes>
 </document>

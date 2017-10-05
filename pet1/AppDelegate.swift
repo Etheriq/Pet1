@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import FacebookCore
+import GoogleSignIn
 #if TESTING
 import netfox
 #endif
@@ -40,9 +41,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return SDKApplicationDelegate.shared.application(app, open:url, options:options)
+        
+        let googleResult = GIDSignIn.sharedInstance()
+            .handle(url,
+                    sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                    annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        let FBResult = SDKApplicationDelegate.shared.application(app, open:url, options:options)
+        
+        return (googleResult && FBResult)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

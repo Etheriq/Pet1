@@ -9,15 +9,17 @@
 import Foundation
 import PromiseKit
 
-class YTFirstStartPresenter {
+class YTFirstStartPresenter: NSObject {
     weak var vc: YTFirstStartViewController?
     private let authService: YTAuthService
     var manager: YTRequestProtocol!
     
     init(withViewController vc:YTFirstStartViewController) {
+        
         self.vc = vc
         authService = YTAuthService.shared
         manager = YTRequestManager.shared
+//        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     func loginWithFB() -> Promise<YTUser> {
