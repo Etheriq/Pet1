@@ -8,7 +8,6 @@
 
 import UIKit
 import GoogleSignIn
-import Google
 
 protocol YTFirstStartViewControllerCoordinatorDelegate: class {
     func signInTapped()
@@ -22,7 +21,7 @@ class YTFirstStartViewController: UIViewController {
     @IBOutlet weak var gradientedBackgroundView: YTGradientedView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var termsAndConditionsLable: UILabel!
-    @IBOutlet weak var googleButtonView: UIView!
+    @IBOutlet weak var googleButtonView: GIDSignInButton!
     
     weak var coordinatorDelegate: YTFirstStartViewControllerCoordinatorDelegate?
     var presenter: YTFirstStartPresenter!
@@ -34,6 +33,7 @@ class YTFirstStartViewController: UIViewController {
         super.viewDidLoad()
         
         presenter = YTFirstStartPresenter(withViewController: self)
+//        presenter.prepareGoogleSignIn()
         configureGradientColors()
         
         let termsGuesture = UITapGestureRecognizer(target: self, action: #selector(termsAndConditiionLabelTapped))
@@ -41,16 +41,8 @@ class YTFirstStartViewController: UIViewController {
         
         //  tests
         
-        var googleError: NSError?
-        GGLContext.sharedInstance().configureWithError(&googleError)
-        if googleError != nil {
-            return
-        }
-        
-        GIDSignIn.sharedInstance().delegate = self
 
-        let googleButton = GIDSignInButton()
-        googleButtonView.addSubview(googleButton)
+        GIDSignIn.sharedInstance().uiDelegate = self
         
 
         let image = UIImage(named: "ic_test")
@@ -139,17 +131,18 @@ class YTFirstStartViewController: UIViewController {
     }
     
     @IBAction func signInWithGoogleAction(_ sender: UIButton) {
-        
-    }
-}
-
-extension YTFirstStartViewController: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if error != nil {
-            return
+        presenter.loginWithGoogle().then { [weak self] user -> Void in
+            self?.coordinatorDelegate?.signInWithFBTapped()
+            }.catch { error in
+                debugPrint(error.localizedDescription)
         }
-        
-        let accesToken = user.authentication.accessToken
     }
 }
 
+extension YTFirstStartViewController: GIDSignInUIDelegate {
+   
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        let a = 5
+    }
+    
+}

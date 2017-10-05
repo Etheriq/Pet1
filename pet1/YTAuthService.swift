@@ -10,26 +10,56 @@ import Foundation
 import PromiseKit
 import FacebookLogin
 import FBSDKCoreKit
+import Google
+import GoogleSignIn
 
 protocol AuthServiceProtocol {
     func isAuthorized() -> Bool
     func getFBAccessToken() -> Promise<String>
+    func getGoogleAccessToken() -> Promise<String>
     func fbLogout()
 }
 
 enum AuthErrors: Error {
     case signInFBCanceled
     case signInFBError(error: Error)
+    case signInGoogleFailed
 }
 
-class YTAuthService: AuthServiceProtocol {
+class YTAuthService: NSObject, AuthServiceProtocol {
     
     static let shared = YTAuthService()
-    private init() {}
+    private override init() {
+        super.init()
+        
+        var googleError: NSError?
+        GGLContext.sharedInstance().configureWithError(&googleError)
+        if googleError != nil {
+            return
+        }
+        
+        GIDSignIn.sharedInstance().delegate = self
+        
+//        GIDSignIn.sharedInstance().signIn()
+    }
     
     // Mark: - AuthServiceProtocol
     func isAuthorized() -> Bool {
         return false
+    }
+    
+    func getGoogleAccessToken() -> Promise<String> {
+        let pending = Promise<String>.pending()
+        
+        GIDSignIn.sharedInstance().signOut()
+        GIDSignIn.sharedInstance().signIn()
+        if let googleUser = GIDSignIn.sharedInstance().currentUser {
+            pending.fulfill(googleUser.authentication.accessToken)
+        } else {
+            pending.reject(AuthErrors.signInGoogleFailed)
+        }
+        
+        return pending.promise
     }
     
     func getFBAccessToken() -> Promise<String> {
@@ -62,5 +92,15 @@ class YTAuthService: AuthServiceProtocol {
     func fbLogout() {
         let loginManager = LoginManager()
         loginManager.logOut()
+    }
+}
+
+extension YTAuthService: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            return
+        }
+        
+        let accesToken = user.authentication.accessToken
     }
 }

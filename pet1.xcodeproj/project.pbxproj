@@ -23,14 +23,14 @@
 		2921008D1F7BDA1300536B70 /* YTSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921008B1F7BDA1300536B70 /* YTSettingsCoordinator.swift */; };
 		292100911F7BE21300536B70 /* YTHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292100901F7BE21300536B70 /* YTHomeCoordinator.swift */; };
 		292100921F7BE21300536B70 /* YTHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292100901F7BE21300536B70 /* YTHomeCoordinator.swift */; };
-		2966F6FD1F86215A005CF93B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2966F6FC1F86215A005CF93B /* GoogleService-Info.plist */; };
-		2966F6FE1F862225005CF93B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2966F6FC1F86215A005CF93B /* GoogleService-Info.plist */; };
 		296F90DF1F6AAD210088C956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F90DE1F6AAD210088C956 /* AppDelegate.swift */; };
 		296F90E41F6AAD210088C956 /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E21F6AAD210088C956 /* FirstStart.storyboard */; };
 		296F90E61F6AAD210088C956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E51F6AAD210088C956 /* Assets.xcassets */; };
 		296F90E91F6AAD210088C956 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296F90E71F6AAD210088C956 /* LaunchScreen.storyboard */; };
 		29708B251F7BEF0700A491FA /* YTFirstStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29708B241F7BEF0700A491FA /* YTFirstStartPresenter.swift */; };
 		29708B261F7BEF0700A491FA /* YTFirstStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29708B241F7BEF0700A491FA /* YTFirstStartPresenter.swift */; };
+		297273D81F86D4D5001F7F23 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 297273D71F86D018001F7F23 /* GoogleService-Info.plist */; };
+		297273D91F86D4D6001F7F23 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 297273D71F86D018001F7F23 /* GoogleService-Info.plist */; };
 		297BF89E1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */; };
 		297BF89F1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */; };
 		297BF8A21F6FCFEF00A1FFA2 /* YTGradientedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BF8A11F6FCFEF00A1FFA2 /* YTGradientedView.swift */; };
@@ -109,7 +109,6 @@
 		292100881F7BD62B00536B70 /* YTListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTListCoordinator.swift; sourceTree = "<group>"; };
 		2921008B1F7BDA1300536B70 /* YTSettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTSettingsCoordinator.swift; sourceTree = "<group>"; };
 		292100901F7BE21300536B70 /* YTHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTHomeCoordinator.swift; sourceTree = "<group>"; };
-		2966F6FC1F86215A005CF93B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		296F90DB1F6AAD210088C956 /* pet1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pet1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296F90DE1F6AAD210088C956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		296F90E31F6AAD210088C956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstStart.storyboard; sourceTree = "<group>"; };
@@ -117,6 +116,7 @@
 		296F90E81F6AAD210088C956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		296F90EA1F6AAD210088C956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29708B241F7BEF0700A491FA /* YTFirstStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTFirstStartPresenter.swift; sourceTree = "<group>"; };
+		297273D71F86D018001F7F23 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		297BF89D1F6FCE6400A1FFA2 /* YTFirstStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTFirstStartViewController.swift; sourceTree = "<group>"; };
 		297BF8A11F6FCFEF00A1FFA2 /* YTGradientedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTGradientedView.swift; sourceTree = "<group>"; };
 		297BF8A71F6FF51400A1FFA2 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
@@ -320,11 +320,11 @@
 		2985AE171F6AAF5A0012A537 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				2966F6FC1F86215A005CF93B /* GoogleService-Info.plist */,
 				291C2F0A1F6AC90D0047C819 /* Constants.swift */,
 				296F90E51F6AAD210088C956 /* Assets.xcassets */,
 				296F90EA1F6AAD210088C956 /* Info.plist */,
 				2987355F1F6AD0E1003FAF6C /* pet1_dev-Info.plist */,
+				297273D71F86D018001F7F23 /* GoogleService-Info.plist */,
 			);
 			name = SupportFiles;
 			sourceTree = "<group>";
@@ -609,7 +609,7 @@
 				296F90E61F6AAD210088C956 /* Assets.xcassets in Resources */,
 				29C6480C1F71424C00B89DC7 /* Tabbar.storyboard in Resources */,
 				296F90E41F6AAD210088C956 /* FirstStart.storyboard in Resources */,
-				2966F6FD1F86215A005CF93B /* GoogleService-Info.plist in Resources */,
+				297273D81F86D4D5001F7F23 /* GoogleService-Info.plist in Resources */,
 				29CC0CA11F710E4100E8AC52 /* SignUp.storyboard in Resources */,
 				29CAA1691F7BCD0F009DB7C4 /* Settings.storyboard in Resources */,
 			);
@@ -627,7 +627,7 @@
 				298735571F6AD0E1003FAF6C /* Assets.xcassets in Resources */,
 				29C6480D1F71424C00B89DC7 /* Tabbar.storyboard in Resources */,
 				298735581F6AD0E1003FAF6C /* FirstStart.storyboard in Resources */,
-				2966F6FE1F862225005CF93B /* GoogleService-Info.plist in Resources */,
+				297273D91F86D4D6001F7F23 /* GoogleService-Info.plist in Resources */,
 				29CC0CA21F710E4100E8AC52 /* SignUp.storyboard in Resources */,
 				29CAA16A1F7BCD0F009DB7C4 /* Settings.storyboard in Resources */,
 			);
