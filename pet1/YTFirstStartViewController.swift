@@ -21,7 +21,6 @@ class YTFirstStartViewController: UIViewController {
     @IBOutlet weak var gradientedBackgroundView: YTGradientedView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var termsAndConditionsLable: UILabel!
-    @IBOutlet weak var googleButtonView: GIDSignInButton!
     
     weak var coordinatorDelegate: YTFirstStartViewControllerCoordinatorDelegate?
     var presenter: YTFirstStartPresenter!
@@ -33,18 +32,15 @@ class YTFirstStartViewController: UIViewController {
         super.viewDidLoad()
         
         presenter = YTFirstStartPresenter(withViewController: self)
-//        presenter.prepareGoogleSignIn()
+        GIDSignIn.sharedInstance().uiDelegate = self
         configureGradientColors()
         
         let termsGuesture = UITapGestureRecognizer(target: self, action: #selector(termsAndConditiionLabelTapped))
         self.termsAndConditionsLable.addGestureRecognizer(termsGuesture)
         
+        
         //  tests
         
-
-        GIDSignIn.sharedInstance().uiDelegate = self
-        
-
         let image = UIImage(named: "ic_test")
         let data = UIImageJPEGRepresentation(image!, 0.8)
         YTRequestManager
@@ -131,18 +127,8 @@ class YTFirstStartViewController: UIViewController {
     }
     
     @IBAction func signInWithGoogleAction(_ sender: UIButton) {
-        presenter.loginWithGoogle().then { [weak self] user -> Void in
-            self?.coordinatorDelegate?.signInWithFBTapped()
-            }.catch { error in
-                debugPrint(error.localizedDescription)
-        }
+        presenter.loginWithGoogle()
     }
 }
 
-extension YTFirstStartViewController: GIDSignInUIDelegate {
-   
-    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
-        let a = 5
-    }
-    
-}
+extension YTFirstStartViewController: GIDSignInUIDelegate { }

@@ -8,8 +8,7 @@
 
 import Foundation
 import PromiseKit
-//import Google
-//import GoogleSignIn
+import GoogleSignIn
 
 class YTFirstStartPresenter: NSObject {
     weak var vc: YTFirstStartViewController?
@@ -17,44 +16,14 @@ class YTFirstStartPresenter: NSObject {
     var manager: YTRequestProtocol!
     
     init(withViewController vc:YTFirstStartViewController) {
-        
         self.vc = vc
         authService = YTAuthService.shared
         manager = YTRequestManager.shared
     }
     
-//    func prepareGoogleSignIn() {
-//        var googleError: NSError?
-//        GGLContext.sharedInstance().configureWithError(&googleError)
-//        if googleError != nil {
-//            return
-//        }
-//
-//        GIDSignIn.sharedInstance().delegate = self
-//    }
-    
-    func loginWithGoogle() ->Promise<YTUser> {
-        let pendingOutside = Promise<YTUser>.pending()
-        
-        authService.getGoogleAccessToken()
-            .then { token -> Promise<YTUser> in
-                let pending = Promise<YTUser>.pending()
-                
-                // make call api with fb token
-                pending.fulfill(YTUser())
-                
-                return pending.promise
-            }
-            .then { user -> Void in
-                // save user and etc
-                debugPrint("save user")
-                pendingOutside.fulfill(user)
-            }
-            .catch { error in
-                pendingOutside.reject(error)
-        }
-        
-        return pendingOutside.promise
+    func loginWithGoogle() {
+        authService.googleAuthorizedDelegate = self
+        authService.makeGoogleSignIn()
     }
     
     func loginWithFB() -> Promise<YTUser> {
@@ -84,6 +53,17 @@ class YTFirstStartPresenter: NSObject {
         return pendingOutside.promise
     }
     
+    
+    // MARK: - private functions
+    fileprivate func signInWith(googleToken: String) -> Promise<YTUser> {
+        let pending = Promise<YTUser>.pending()
+        
+        // make call api with fb token
+        pending.fulfill(YTUser())
+        
+        return pending.promise
+    }
+    
     func a() {
         manager
             .request(params: YTUserRequest.getMe, additionalParameters: nil, additionalHeader: nil)
@@ -96,13 +76,16 @@ class YTFirstStartPresenter: NSObject {
     }
 }
 
-//extension YTFirstStartPresenter: GIDSignInDelegate {
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        if error != nil {
-//            return
-//        }
-//
-//        let accesToken = user.authentication.accessToken
-//    }
-//}
-
+extension YTFirstStartPresenter: AuthGoogleSignInDelegate {
+    func googleAuthorizedWith(user: GIDGoogleUser, andWith signIn: GIDSignIn) {
+        signInWith(googleToken: user.authentication.accessToken)
+            .then { user -> Void in
+            // save user and etc
+            debugPrint("save user")
+            }.then { [weak self] _ -> Void in
+                self?.vc?.coordinatorDelegate?.signInWithFBTapped()
+            }.catch { error in
+                
+        }
+    }
+}

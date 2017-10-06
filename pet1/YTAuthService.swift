@@ -16,8 +16,14 @@ import GoogleSignIn
 protocol AuthServiceProtocol {
     func isAuthorized() -> Bool
     func getFBAccessToken() -> Promise<String>
-    func getGoogleAccessToken() -> Promise<String>
+    func makeGoogleSignIn()
     func fbLogout()
+    func googleLogout()
+    func getCurrentGoogleUser() -> GIDGoogleUser?
+}
+
+protocol AuthGoogleSignInDelegate: class {
+    func googleAuthorizedWith(user: GIDGoogleUser, andWith signIn: GIDSignIn)
 }
 
 enum AuthErrors: Error {
@@ -28,38 +34,29 @@ enum AuthErrors: Error {
 
 class YTAuthService: NSObject, AuthServiceProtocol {
     
+    weak var googleAuthorizedDelegate: AuthGoogleSignInDelegate?
     static let shared = YTAuthService()
-    private override init() {
-        super.init()
-        
-        var googleError: NSError?
-        GGLContext.sharedInstance().configureWithError(&googleError)
-        if googleError != nil {
-            return
-        }
-        
-        GIDSignIn.sharedInstance().delegate = self
-        
-//        GIDSignIn.sharedInstance().signIn()
-    }
+    private override init() {}
     
     // Mark: - AuthServiceProtocol
     func isAuthorized() -> Bool {
         return false
     }
     
-    func getGoogleAccessToken() -> Promise<String> {
-        let pending = Promise<String>.pending()
+    func makeGoogleSignIn() {
+        var googleError: NSError?
+        GGLContext.sharedInstance().configureWithError(&googleError)
+        if googleError != nil {
+            return
+        }
+        GIDSignIn.sharedInstance().delegate = self
         
         GIDSignIn.sharedInstance().signOut()
         GIDSignIn.sharedInstance().signIn()
-        if let googleUser = GIDSignIn.sharedInstance().currentUser {
-            pending.fulfill(googleUser.authentication.accessToken)
-        } else {
-            pending.reject(AuthErrors.signInGoogleFailed)
-        }
-        
-        return pending.promise
+    }
+    
+    func getCurrentGoogleUser() -> GIDGoogleUser? {
+        return GIDSignIn.sharedInstance().currentUser
     }
     
     func getFBAccessToken() -> Promise<String> {
@@ -93,6 +90,10 @@ class YTAuthService: NSObject, AuthServiceProtocol {
         let loginManager = LoginManager()
         loginManager.logOut()
     }
+    
+    func googleLogout() {
+        GIDSignIn.sharedInstance().signOut()
+    }
 }
 
 extension YTAuthService: GIDSignInDelegate {
@@ -101,6 +102,8 @@ extension YTAuthService: GIDSignInDelegate {
             return
         }
         
-        let accesToken = user.authentication.accessToken
+        guard let user = user, let signIn = signIn else { return }
+        
+        googleAuthorizedDelegate?.googleAuthorizedWith(user: user, andWith: signIn)
     }
 }
