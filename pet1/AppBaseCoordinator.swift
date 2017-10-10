@@ -38,6 +38,11 @@ class AppBaseCoordinator: Coordinator {
     fileprivate func showStartScreen() {
         let startCoordinator = YTAuthorizationFlowCoordinator(with: navigationController)
         startCoordinator.start()
+        startCoordinator.flowCompletion = { [weak self] coordinator in
+            self?.removeChildCoordinator(coordinator: coordinator)
+            self?.showHomeScreen()
+        }
+        
         addChildCoordinator(coordinator: startCoordinator)
     }
     

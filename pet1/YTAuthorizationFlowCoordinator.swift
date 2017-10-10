@@ -11,6 +11,7 @@ import UIKit
 class YTAuthorizationFlowCoordinator: Coordinator {
     
     fileprivate let navigationController: UINavigationController
+    var flowCompletion: ((Coordinator) -> Void)?
     
     init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -55,13 +56,15 @@ class YTAuthorizationFlowCoordinator: Coordinator {
             navigationController.show(termsVC, sender: self)
         }
     }
-    
-    fileprivate func showHomeScreen() {
-        removeChildCoordinator(coordinator: self)
+    fileprivate func flowCompleted(vc: YTTermsAndConditionsViewController? = nil) {
+        if vc != nil {
+            cancelTapped(vc: vc!)
+            return
+        }
         
-        let tabBarCoordinator = YTTabbarCoordinator(with: navigationController)
-        tabBarCoordinator.start()
-        addChildCoordinator(coordinator: tabBarCoordinator)        
+        if let completion = flowCompletion {
+            completion(self)
+        }
     }
 }
 
@@ -73,7 +76,9 @@ extension YTAuthorizationFlowCoordinator: YTFirstStartViewControllerCoordinatorD
         showSignUp()
     }
     func signInWithFBTapped() {
-        showHomeScreen()
+        // check for first time showed t&c. If first time -> show t&c else -> flowCompleted
+        
+        showTermsAndCond(modal: false)
     }
     func showTermsAndConditionsTapped(modal: Bool) {
         showTermsAndCond(modal: true)
@@ -82,53 +87,21 @@ extension YTAuthorizationFlowCoordinator: YTFirstStartViewControllerCoordinatorD
 
 extension YTAuthorizationFlowCoordinator: YTSignUpViewControllerDelegate {
     func registered() {
-        showHomeScreen()
+        flowCompleted()
     }
 }
 
 extension YTAuthorizationFlowCoordinator: YTSignInViewControllerCoordinatorDelegate {
     func loginTapped() {
-        showHomeScreen()
+        flowCompleted()
     }
 }
 
 extension YTAuthorizationFlowCoordinator: YTTermsAndConditionsViewControllerCoordinatorDelegate {
     func applyTapped(vc: YTTermsAndConditionsViewController) {
-        
+        flowCompleted(vc: vc)
     }
     func cancelTapped(vc: YTTermsAndConditionsViewController) {
         vc.dismiss(animated: true, completion: nil)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
