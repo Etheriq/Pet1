@@ -35,13 +35,21 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ1-09-KOb">
+                                <rect key="frame" x="166" y="420" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="t1W-le-535" firstAttribute="top" secondItem="o9K-wg-Fp4" secondAttribute="bottom" constant="20" id="9yY-O5-Nba"/>
                             <constraint firstItem="o9K-wg-Fp4" firstAttribute="centerY" secondItem="6j5-kV-5eI" secondAttribute="centerY" id="AGb-Fc-SeD"/>
                             <constraint firstItem="t1W-le-535" firstAttribute="centerX" secondItem="6j5-kV-5eI" secondAttribute="centerX" id="S31-RA-kzT"/>
+                            <constraint firstItem="PZ1-09-KOb" firstAttribute="top" secondItem="t1W-le-535" secondAttribute="bottom" constant="16" id="aTK-3W-V2k"/>
                             <constraint firstItem="o9K-wg-Fp4" firstAttribute="centerX" secondItem="6j5-kV-5eI" secondAttribute="centerX" id="gVb-KV-yjd"/>
+                            <constraint firstItem="PZ1-09-KOb" firstAttribute="centerX" secondItem="6j5-kV-5eI" secondAttribute="centerX" id="u7o-Fj-FyM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8KL-oz-rmf"/>
                     </view>
