@@ -40,7 +40,7 @@ class YTAuthService: NSObject, AuthServiceProtocol {
     
     // Mark: - AuthServiceProtocol
     func isAuthorized() -> Bool {
-        return false
+        return true
     }
     
     func makeGoogleSignIn() {
